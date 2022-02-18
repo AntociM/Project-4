@@ -8,7 +8,7 @@ class CustomUser(AbstractUser):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True, blank=False, null=False)
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
+    phone = PhoneNumberField(null=False, blank=False)
     username = models.CharField(max_length=30, unique=True)
     housing_type = models.CharField(max_length=200)
     house_sqm = models.IntegerField(default=0)
