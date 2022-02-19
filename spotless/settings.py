@@ -157,3 +157,7 @@ DEFAULT_FILES_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'my_spotless_app.CustomUser'
+
+ACCOUNT_FORMS = {
+    "signup" : "my_spotless_app.forms.CustomSignupForm"
+}
