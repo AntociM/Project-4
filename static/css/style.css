@@ -1,8 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@100;300&display=swap');
+
 body {
-    color: antiquewhite;
+    color: black;
 }
 
-.nav-item {
+/* .nav-item {
     background: red;
+} */
+
+.btn-signup {
+    background-color: rgb(71, 33, 107);
+    color: white
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: rgb(71, 33, 107);
 }

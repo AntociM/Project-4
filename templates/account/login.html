@@ -14,7 +14,7 @@
     <div class="col-md8 mt3 offset-md-2">
       <h1>{% trans "Sign In" %}</h1>
 
-      <p>{% blocktrans %}If you do not have an account, please
+      <p>{% blocktrans %}Welcome back to Spotless Co. Please log in. If you do not have an account, please
         <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
     </div>
   </div>
@@ -26,7 +26,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+        <button  class="btn-signup btn " type="submit">{% trans "Sign In" %}</button>
       </form>
     </div>
   </div>
