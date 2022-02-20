@@ -19,8 +19,6 @@ class CustomUserChangeForm(UserChangeForm):
 
 
 class CustomSignupForm(SignupForm):
-
-    
     HOUSING_TYPE = [
         ('ap', 'Apartment'),
         ('condo', 'Condo'),
@@ -40,8 +38,8 @@ class CustomSignupForm(SignupForm):
 
     
 
-    def signup(self, request, user):
-        # user=super(CustomSignupForm, self).save(request)
+    def save(self, request):
+        user=super(CustomSignupForm, self).save(request)
         user.first_name=self.cleaned_data['first_name']
         user.last_name=self.cleaned_data['last_name']
         user.save()

@@ -159,5 +159,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'my_spotless_app.CustomUser'
 
 ACCOUNT_FORMS = {
-    "signup" : "my_spotless_app.forms.CustomSignupForm"
+    'signup' : 'my_spotless_app.forms.CustomSignupForm'
 }
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_SIGNUP_FORM_CLASS = '{{ repo_name }}.my_spotless_app.forms.CustomSignupForm'
