@@ -31,7 +31,7 @@ class CustomSignupForm(SignupForm):
     first_name = forms.CharField(max_length=30, label='First Name')
     last_name = forms.CharField(max_length=30, label='Last Name')
     phone = forms.CharField(
-        max_length=15, label='Phone number')
+        max_length=12, label='Phone number')
     address = forms.CharField(max_length=100, label='Address')
     housing_type = forms.ChoiceField(choices=HOUSING_TYPE)
     surface_sqm=forms.IntegerField()
@@ -40,8 +40,12 @@ class CustomSignupForm(SignupForm):
 
     def save(self, request):
         user=super(CustomSignupForm, self).save(request)
-        user.first_name=self.cleaned_data['first_name']
-        user.last_name=self.cleaned_data['last_name']
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
+        user.phone = self.cleaned_data['phone']
+        user.address = self.cleaned_data['address']
+        user.housing_type = self.cleaned_data['housing_type']
+        user.surface_sqm = self.cleaned_data['surface_sqm']
         user.save()
         return user
     

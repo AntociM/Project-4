@@ -40,10 +40,16 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    first_name = models.CharField(max_length=254, null=True, blank=True)
-    last_name = models.CharField(max_length=254, null=True, blank=True)
+    first_name = models.CharField(max_length=30, null=True, blank=True)
+    last_name = models.CharField(max_length=30, null=True, blank=True)
+    # TODO add validation
+    phone=models.CharField(max_length=12, null=True)
+    address=models.CharField(max_length=100, null=True)
+    housing_type = models.CharField(max_length=20, null=True)
+    surface_sqm = models.IntegerField(null=True)
     last_login = models.DateTimeField(null=True, blank=True)
     date_joined = models.DateTimeField(default=timezone.now)
+
     
 
     USERNAME_FIELD = 'username'
