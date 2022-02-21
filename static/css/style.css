@@ -4,6 +4,11 @@ body {
     color: black;
 }
 
+.hero {
+    background-image: url("https://res.cloudinary.com/capsunica/image/upload/v1645470044/Cover-image_2_i1brrl.jpg");
+    background-position: center;
+}
+
 /* .nav-item {
     background: red;
 } */
