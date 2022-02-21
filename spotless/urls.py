@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app/', include('my_spotless_app.urls')),
+    path('', include('my_spotless_app.urls')),
     path('accounts/', include('allauth.urls')),
 ]
