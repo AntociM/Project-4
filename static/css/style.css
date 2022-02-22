@@ -5,13 +5,12 @@ body {
 }
 
 .hero {
-    background-image: url("https://res.cloudinary.com/capsunica/image/upload/v1645470044/Cover-image_2_i1brrl.jpg");
-    background-position: center;
+    background-image: url("https://res.cloudinary.com/capsunica/image/upload/v1645556835/Cover-image_2_pfn3co.jpg");
+    background-position: center 83%;
+    background-repeat: no-repeat;
+    background-position-x: 15px;
 }
 
-/* .nav-item {
-    background: red;
-} */
 
 .btn-signup {
     background-color: rgb(71, 33, 107);
@@ -22,4 +21,12 @@ body {
 .btn-signup:active {
     background-color: #fff;
     color: rgb(71, 33, 107);
+}
+
+.icons {
+    font-size: 64px;
+}
+
+.social-media {
+    font-size: 64px;
 }
