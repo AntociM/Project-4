@@ -32,14 +32,9 @@ span {
     color: rgb(71, 33, 107);
 }
 
-.icons {
-    font-size: 64px;
+.steps-icons {
+    width: 64px;
 }
-
-.social-media {
-    font-size: 64px;
-}
-
 
 .social-logo {
     max-width: 60%;
