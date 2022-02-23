@@ -8,9 +8,18 @@ body {
     background-image: url("https://res.cloudinary.com/capsunica/image/upload/v1645556835/Cover-image_2_pfn3co.jpg");
     background-position: center 83%;
     background-repeat: no-repeat;
-    background-position-x: 15px;
+    background-size: cover;
+    height: 60vh;
+
+   
+    
 }
 
+span {
+    font-style: oblique;
+    font-weight: 500;
+    color: rgb(75, 7, 7);
+}
 
 .btn-signup {
     background-color: rgb(71, 33, 107);
@@ -29,4 +38,9 @@ body {
 
 .social-media {
     font-size: 64px;
+}
+
+
+.social-logo {
+    max-width: 60%;
 }
