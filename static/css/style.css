@@ -5,6 +5,13 @@ body {
     font-size: large;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 .hero {
     background-image: url("https://res.cloudinary.com/capsunica/image/upload/v1645556835/Cover-image_2_pfn3co.jpg");
     background-position: center 83%;
@@ -58,4 +65,4 @@ span {
     margin-top: 50px;
     margin-bottom: 50px
     }
-}
+
