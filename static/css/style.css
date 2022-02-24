@@ -10,10 +10,7 @@ body {
     background-position: center 83%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
-
-   
-    
+    height: 60vh;   
 }
 
 span {
@@ -39,4 +36,26 @@ span {
 
 .social-logo {
     max-width: 60%;
+}
+
+.profile img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%
+}
+
+.header-testimonials {
+    padding-top: 35px;
+    padding-bottom: 50px;
+    color:black;
+}
+
+.testimonials {
+    background-color: #cae9ff;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.58);
+    border-radius: 16px;
+    margin-top: 50px;
+    margin-bottom: 50px
+    }
 }
