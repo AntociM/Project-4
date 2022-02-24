@@ -12,10 +12,21 @@ class CustomUserCreationForm(UserCreationForm):
 
 
 class CustomUserChangeForm(UserChangeForm):
+    password = None
+    HOUSING_TYPE = [
+        ('ap', 'Apartment'),
+        ('condo', 'Condo'),
+        ('villa', 'Villa'),
+        ('single', 'Single-family'),
+        ('mansion', 'Mansion'),
+        ('cottage', 'Cottage'),
+        ('tiny', 'Tiny House'),
+    ]
+    housing_type = forms.ChoiceField(choices=HOUSING_TYPE)
 
     class Meta:
         model = CustomUser
-        fields = ('username', 'email')
+        fields = ('username',  'first_name' ,'last_name', 'email', 'phone', 'address', 'housing_type', 'surface_sqm')
 
 
 class CustomSignupForm(SignupForm):

@@ -5,46 +5,50 @@
 {% block base_content %}
 
 
-  {% block content %}
+{% block content %}
 
-  {% endblock content %}
+{% endblock content %}
 
-  <!--Footer-->
-  <div class="row m-0 p-0">
-    <footer class="text-center text-white p-0 ">
-      <!-- Grid container -->
-      <div class="container p-4 pb-0">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-          <!-- Facebook -->
-          <a class="btn btn-primary btn-floating bg-transparent border-0 p-0" href="https://www.facebook.com/" role="button">
-            {% load static %} <img src="{% static 'media/images/footer/facebook-logo-64.png' %}" alt="Facebook Logo" class="social-logo">
-          </a>
+<!--Footer-->
+<footer class="mt-auto text-center text-white p-0 ">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-primary btn-floating bg-transparent border-0 p-0" href="https://www.facebook.com/"
+        role="button">
+        {% load static %} <img src="{% static 'media/images/footer/facebook-logo-64.png' %}" alt="Facebook Logo"
+          class="social-logo">
+      </a>
 
-          <!-- Twitter -->
-          <a class="btn btn-primary btn-floating bg-transparent border-0 p-0" href="https://www.twitter.com/" role="button">
-            {% load static %} <img src="{% static 'media/images/footer/twitter-logo-64.png' %}" alt="Twitter Logo" class="social-logo">
-          </a>
+      <!-- Twitter -->
+      <a class="btn btn-primary btn-floating bg-transparent border-0 p-0" href="https://www.twitter.com/" role="button">
+        {% load static %} <img src="{% static 'media/images/footer/twitter-logo-64.png' %}" alt="Twitter Logo"
+          class="social-logo">
+      </a>
 
-          <!-- Instagram -->
-          <a class="btn btn-primary btn-floating bg-transparent border-0 p-0" href="https://www.instagram.com/" role="button">
-            {% load static %} <img src="{% static 'media/images/footer/instagram-logo-64.png' %}" alt="Instagram Logo" class="social-logo">
-          </a>
+      <!-- Instagram -->
+      <a class="btn btn-primary btn-floating bg-transparent border-0 p-0" href="https://www.instagram.com/"
+        role="button">
+        {% load static %} <img src="{% static 'media/images/footer/instagram-logo-64.png' %}" alt="Instagram Logo"
+          class="social-logo">
+      </a>
 
-          <!-- Youtube -->
-          <a class="btn btn-primary btn-floating bg-transparent border-0 p-0" href="https://www.youtube.com/" role="button">
-            {% load static %} <img src="{% static 'media/images/footer/youtube-logo-64.png' %}" alt="Youtube Logo" class="social-logo">
-          </a>
-        </section>
-        <!-- Section: Social media -->
-      </div>
-      <!-- Grid container -->
-
-      <div class="text-center p-3" style="background-color: #3c497e;">
-        <a class="text-white" href="{% url 'home' %}">Spotless Co.</a>
-        © 2022 Copyright
-      </div>
-    </footer>
+      <!-- Youtube -->
+      <a class="btn btn-primary btn-floating bg-transparent border-0 p-0" href="https://www.youtube.com/" role="button">
+        {% load static %} <img src="{% static 'media/images/footer/youtube-logo-64.png' %}" alt="Youtube Logo"
+          class="social-logo">
+      </a>
+    </section>
+    <!-- Section: Social media -->
   </div>
+  <!-- Grid container -->
 
-  {% endblock base_content %}
+  <div class="text-center p-3" style="background-color: #3c497e;">
+    <a class="text-white" href="{% url 'home' %}">Spotless Co.</a>
+    © 2022 Copyright
+  </div>
+</footer>
+
+{% endblock base_content %}

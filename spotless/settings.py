@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'django_bootstrap5',
     'cloudinary',
     'my_spotless_app',
 ]
