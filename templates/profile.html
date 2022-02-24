@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h2> Welcome, {{user }}</h2>
+
+<p>Name: {{ user.first_name.last.name }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Phone: {{ user.phone }}</p>
+<p>Address: {{user.address }}</p>
+<p>Housing_type: {{ user.housing_type }}</p>
+<p>Surface_sqm: {{ user.surface_sqm }} </p> 
+
+<p></p>
+{% else %}
+
+<p>Login to view your details.</p>
+
+{% endif %}
+{%endblock %}
