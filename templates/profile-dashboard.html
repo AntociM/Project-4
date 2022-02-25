@@ -5,10 +5,28 @@
 
 <h2> Your bookings</h2>
 
+<div class="accordion" id="accordionExample"></div>
 {% for i in bookings %}
-<div class="container-fluid">{{ i.username }} - {{ i.date }} - {{i.service_type}}</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header" id="heading{{ i.id }}">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ i.id }}" aria-expanded="false" aria-controls="collapse{{ i.id }}">
+        {{ i.date }} - {{i.service_type}}
+      </button>
+    </h2>
+    <div id="collapse{{ i.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ i.id }}" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h4>Mentions:</h4>
+        <p>{{i.mentions}}</p>
+        <button type="button" class="btn btn-primary">Change</button>
+        <button type="button" class="btn btn-danger">Cancel booking</button>
+      </div>
+    </div>
+  </div>
+
+<!-- <div class="container-fluid">{{ i.username }} - {{ i.date }} - {{i.service_type}}</div> -->
 
 {% endfor %}
-
+</div>
 
 {%endblock %}
