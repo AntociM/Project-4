@@ -9,12 +9,6 @@ def home_page_view(request):
     context = {}
     return render(request, "index.html", context)
 
-def profile_view(request):
-    context = {
-        'user':request.user
-    }
-    return render(request, "profile.html", context)
-
 @login_required
 def edit_profile(request):
     if request.method == 'POST':
@@ -25,4 +19,17 @@ def edit_profile(request):
     else:
         form = CustomUserChangeForm(instance=request.user)
 
-    return render(request, 'profile.html', {'form': form})
+    return render(request, 'profile-edit.html', {'form': form})
+
+
+def profile_dashboard_view(request):
+    context = {
+        'user':request.user
+    }
+    return render(request, "profile-dashboard.html", context)
+
+def profile_subscription_view(request):
+    context = {
+        'user':request.user
+    }
+    return render(request, "profile-subscription.html", context)
