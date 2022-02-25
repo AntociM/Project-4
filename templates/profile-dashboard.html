@@ -3,8 +3,10 @@
 
 {% block profile-content %}
 
-<div class="container-fluid">
-  <h2>Create dashboard here</h2>
-</div>
+{% for i in bookings %}
+<div class="container-fluid">{{ i.username }} - {{ i.date }} - {{i.service_type}}</div>
+
+{% endfor %}
+
 
 {%endblock %}

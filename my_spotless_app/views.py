@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-# from django.views import generic
-# from django.urls import reverse_lazy
 from .forms import CustomUserChangeForm
 from .forms import BookingForm
 from .models import Booking
@@ -44,4 +42,11 @@ def booking_view(request):
         form = BookingForm()
 
     return render(request, 'booking.html', {'form': form})
+
+def booking_display(request):
+
+    bookings = Booking.objects.filter(username=request.user)
+
+    return render(request, 'profile-dashboard.html', { 'bookings': bookings})
+
     
