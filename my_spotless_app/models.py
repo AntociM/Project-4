@@ -68,7 +68,7 @@ class Member(models.Model):
     date_joined = models.DateField(auto_now=True)
 
 
-class Upcoming(models.Model):
+class Booking(models.Model):
     APPROVED = ((0, 'No'), (1, 'Yes'))
     username = models.CharField(max_length=30)
     date = models.DateField(default=datetime.date.today)

@@ -2,6 +2,7 @@ from django import forms
 from allauth.account.forms import SignupForm
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
+from .models import Booking
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -50,7 +51,7 @@ class CustomSignupForm(SignupForm):
     
 
     def save(self, request):
-        user=super(CustomSignupForm, self).save(request)
+        user = super(CustomSignupForm, self).save(request)
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.phone = self.cleaned_data['phone']
@@ -62,3 +63,35 @@ class CustomSignupForm(SignupForm):
     
     class Meta:
         model = CustomUser
+
+
+class BookingForm(forms.Form):
+    SERVICE_TYPE = [
+        ('weekly', 'Weekly Cleaning'),
+        ('general', 'General Cleaning'),
+        ('moveout', 'Moveout Cleaning'),
+        ('window', 'Window Cleaning'),
+        ('gardening', 'Gardening'),
+        ('craft', 'Simpler Crafts'),
+        ('recycling', 'Recycling'),
+        ('relocation', 'Relocation Assistance'),
+    ]
+    username = form.CharField(max_length=30)
+    service_type = forms.ChoiceField(choices=SERVICE_TYPE)
+    date = forms.DateField(widget = forms.SelectDateWidget)
+    mentions = form.TextField(blank=True)
+
+    def save(self, request):
+        # user = request.user
+        booking=super(BookingForm, self).save(request)
+        booking.username = request.user
+        booking.service_type = self.cleaned_data['service_type']
+        booking.date = self.cleaned_data['date']
+        booking.mentions = self.cleaned_data['mentions']
+
+        user.save()
+        return user
+
+    class Meta:
+        model = Booking
+
