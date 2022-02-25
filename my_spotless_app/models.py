@@ -69,6 +69,17 @@ class Member(models.Model):
 
 
 class Booking(models.Model):
+    SERVICE_TYPE = [
+        ('weekly', 'Weekly Cleaning'),
+        ('general', 'General Cleaning'),
+        ('moveout', 'Moveout Cleaning'),
+        ('window', 'Window Cleaning'),
+        ('gardening', 'Gardening'),
+        ('craft', 'Simpler Crafts'),
+        ('recycling', 'Recycling'),
+        ('relocation', 'Relocation Assistance'),
+    ]
+
     APPROVED = ((0, 'No'), (1, 'Yes'))
     username = models.CharField(max_length=30)
     date = models.DateField(default=datetime.date.today)
@@ -76,6 +87,7 @@ class Booking(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
     approved = models.IntegerField(choices=APPROVED, default=False)
+    service_type = models.CharField(max_length=30, choices=SERVICE_TYPE, default='Weekly Cleaning',)
 
     class Meta:
         ordering: ['date'] 
