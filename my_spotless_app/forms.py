@@ -27,7 +27,8 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = ('username',  'first_name' ,'last_name', 'email', 'phone', 'address', 'housing_type', 'surface_sqm')
+        fields = ('username',  'first_name', 'last_name', 'email',
+                  'phone', 'address', 'housing_type', 'surface_sqm')
 
 
 class CustomSignupForm(SignupForm):
@@ -46,9 +47,7 @@ class CustomSignupForm(SignupForm):
         max_length=12, label='Phone number')
     address = forms.CharField(max_length=100, label='Address')
     housing_type = forms.ChoiceField(choices=HOUSING_TYPE)
-    surface_sqm=forms.IntegerField()
-
-    
+    surface_sqm = forms.IntegerField()
 
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)
@@ -60,7 +59,7 @@ class CustomSignupForm(SignupForm):
         user.surface_sqm = self.cleaned_data['surface_sqm']
         user.save()
         return user
-    
+
     class Meta:
         model = CustomUser
 
@@ -76,11 +75,9 @@ class BookingForm(forms.Form):
         ('recycling', 'Recycling'),
         ('relocation', 'Relocation Assistance'),
     ]
-    # username = forms.CharField(max_length=30)
     service_type = forms.ChoiceField(choices=SERVICE_TYPE)
-    date = forms.DateField(widget = forms.SelectDateWidget)
-    mentions = forms.CharField()
+    date = forms.DateField(widget=forms.SelectDateWidget)
+    mentions = forms.CharField(widget=forms.Textarea)
 
     class Meta:
         model = Booking
-

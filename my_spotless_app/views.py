@@ -24,7 +24,7 @@ def edit_profile(request):
 
 def profile_dashboard_view(request):
     context = {
-        'user':request.user
+        'user': request.user
     }
     return render(request, "profile-dashboard.html", context)
 
@@ -45,8 +45,6 @@ def booking_view(request):
 
 def booking_display(request):
 
-    bookings = Booking.objects.filter(username=request.user)
+    bookings = Booking.objects.filter(username=request.user). only('username', 'date', 'service_type', 'mentions')
 
-    return render(request, 'profile-dashboard.html', { 'bookings': bookings})
-
-    
+    return render(request, 'profile-dashboard.html', {'bookings': bookings})

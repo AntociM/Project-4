@@ -7,31 +7,32 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class UserManager(BaseUserManager):
 
-  def _create_user(self, username, email, password, is_staff, is_superuser, **extra_fields):
-    if not email:
-        raise ValueError('Users must have an email address')
-    now = timezone.now()
-    email = self.normalize_email(email)
-    user = self.model(
-        username=username,
-        email=email,
-        is_staff=is_staff, 
-        is_active=True,
-        is_superuser=is_superuser, 
-        last_login=now,
-        date_joined=now, 
-        **extra_fields
-    )
-    user.set_password(password)
-    user.save(using=self._db)
-    return user
+    def _create_user(self, username, email, password, is_staff, is_superuser, **extra_fields):
+        if not email:
+            raise ValueError('Users must have an email address')
+        now = timezone.now()
+        email = self.normalize_email(email)
+        user = self.model(
+            username=username,
+            email=email,
+            is_staff=is_staff,
+            is_active=True,
+            is_superuser=is_superuser,
+            last_login=now,
+            date_joined=now,
+            **extra_fields
+        )
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
 
-  def create_user(self, username, email, password, **extra_fields):
-    return self._create_user(username, email, password, False, False, **extra_fields)
+    def create_user(self, username, email, password, **extra_fields):
+        return self._create_user(username, email, password, False, False, **extra_fields)
 
-  def create_superuser(self, username, email, password, **extra_fields):
-    user=self._create_user(username, email, password, True, True, **extra_fields)
-    return user
+    def create_superuser(self, username, email, password, **extra_fields):
+        user = self._create_user(
+            username, email, password, True, True, **extra_fields)
+        return user
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
@@ -43,14 +44,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=30, null=True, blank=True)
     last_name = models.CharField(max_length=30, null=True, blank=True)
     # TODO add validation
-    phone=models.CharField(max_length=12, null=True)
-    address=models.CharField(max_length=100, null=True)
+    phone = models.CharField(max_length=12, null=True)
+    address = models.CharField(max_length=100, null=True)
     housing_type = models.CharField(max_length=20, null=True)
     surface_sqm = models.IntegerField(null=True)
     last_login = models.DateTimeField(null=True, blank=True)
     date_joined = models.DateTimeField(default=timezone.now)
-
-    
 
     USERNAME_FIELD = 'username'
     EMAIL_FIELD = 'email'
@@ -63,7 +62,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 
 class Member(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, unique=True, null=True, related_name='registered')
+    user = models.OneToOneField(
+        CustomUser, on_delete=models.CASCADE, unique=True, null=True, related_name='registered')
     registered = models.BooleanField(default=False)
     date_joined = models.DateField(auto_now=True)
 
@@ -84,24 +84,25 @@ class Booking(models.Model):
     username = models.CharField(max_length=30)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
-    service_type = models.CharField(max_length=30, choices=SERVICE_TYPE, default='Weekly Cleaning',)
+    service_type = models.CharField(
+        max_length=30, choices=SERVICE_TYPE, default='Weekly Cleaning',)
     date = models.DateField(default=datetime.date.today)
     mentions = models.TextField(blank=True)
     approved = models.IntegerField(choices=APPROVED, default=False)
-   
-   
 
     class Meta:
-        ordering: ['date'] 
-    
+        ordering: ['date']
+
     def __str__(self):
         return self.mentions
+
 
 class Contact(models.Model):
     REPLIED = ((0, 'No'), (1, 'Yes'))
     name = models.CharField(max_length=100, null=False, blank=False)
     telephone = PhoneNumberField(null=False, blank=False, unique=True)
-    email = models.EmailField(max_length=50, blank=False, help_text='Email must include "@"')
+    email = models.EmailField(
+        max_length=50, blank=False, help_text='Email must include "@"')
     message = models.TextField(blank=False, null=False)
     replied = models.IntegerField(choices=REPLIED, default=False)
     created = models.DateTimeField(auto_now=True)
@@ -113,4 +114,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return str(self.name)
-

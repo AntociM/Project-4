@@ -20,6 +20,10 @@ footer {
     height: 60vh;   
 }
 
+#intro {
+    font-size: 100px;
+}
+
 span {
     font-style: oblique;
     font-weight: 500;

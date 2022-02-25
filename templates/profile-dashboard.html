@@ -3,6 +3,8 @@
 
 {% block profile-content %}
 
+<h2> Your bookings</h2>
+
 {% for i in bookings %}
 <div class="container-fluid">{{ i.username }} - {{ i.date }} - {{i.service_type}}</div>
 
