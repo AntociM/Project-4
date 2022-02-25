@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 # from django.views import generic
 # from django.urls import reverse_lazy
 from .forms import CustomUserChangeForm
+from .forms import BookingForm
+from .models import Booking
 
 
 def home_page_view(request):
@@ -27,3 +29,18 @@ def profile_dashboard_view(request):
         'user':request.user
     }
     return render(request, "profile-dashboard.html", context)
+
+def booking_view(request):
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = Booking()
+            booking.username = request.user.username
+            booking.date = form.cleaned_data['date']
+            booking.mentions = form.cleaned_data['mentions']
+            booking.save()
+    else:
+        form = BookingForm()
+
+    return render(request, 'booking.html', {'form': form})
+    
