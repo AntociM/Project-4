@@ -27,9 +27,3 @@ def profile_dashboard_view(request):
         'user':request.user
     }
     return render(request, "profile-dashboard.html", context)
-
-def profile_subscription_view(request):
-    context = {
-        'user':request.user
-    }
-    return render(request, "profile-subscription.html", context)
