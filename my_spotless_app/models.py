@@ -67,27 +67,6 @@ class Member(models.Model):
     registered = models.BooleanField(default=False)
     date_joined = models.DateField(auto_now=True)
 
-class Membership(models.Model):
-    MEMBERSHIP_CHOICES = [
-        ('B', 'Basic'),
-        ('P', 'Plus'),
-        ('U', 'Ultra'),
-    ]
-    STATUS = ((0, "Inactive"), (1, "Active"))
-    membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICES, default='Basic')
-    description = models.TextField()
-    status = models.IntegerField(choices=STATUS, default=0)
-
-class Services(models.Model):
-    class Frequency(models.IntegerChoices):
-        Weekly = 1
-        Bimonnthly = 2
-        Monthly = 3
-    
-    frequency = models.IntegerField(choices=Frequency.choices)
-    name = models.CharField(max_length=100)
-    duration = models.DurationField()
-    services_frequency = models.IntegerField(choices=Frequency.choices)
 
 class Upcoming(models.Model):
     APPROVED = ((0, 'No'), (1, 'Yes'))
