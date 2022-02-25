@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container m-0 p-0">
+    <div class="row flex-nowrap">
+        <div class="col-2 d-flex flex-column flex-shrink-0 p-3" style="width: 280px;">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="{% url 'dashboard_profile' %}" class="nav-link active" aria-current="page">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'subscription_profile' %}" class="nav-link link-dark">
+                        Manage subcription
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'edit_profile' %}" class="nav-link link-dark">
+                        Edit profile
+                    </a>
+                </li>
+                <a class="btn btn-warning" href="{% url 'account_logout' %}" role="button">Logout</a>
+
+            </ul>
+        </div>
+    
+        <div class="col-10">
+            {% block profile-content %}
+            
+            {% endblock profile-content %}
+        </div>
+    </div>
+</div>
+
+
+{% else %}
+
+<p>Login to view your details.</p>
+
+{% endif %}
+{%endblock %}
