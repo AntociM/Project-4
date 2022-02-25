@@ -76,21 +76,21 @@ class BookingForm(forms.Form):
         ('recycling', 'Recycling'),
         ('relocation', 'Relocation Assistance'),
     ]
-    username = form.CharField(max_length=30)
+    # username = forms.CharField(max_length=30)
     service_type = forms.ChoiceField(choices=SERVICE_TYPE)
     date = forms.DateField(widget = forms.SelectDateWidget)
-    mentions = form.TextField(blank=True)
+    mentions = forms.CharField()
 
-    def save(self, request):
-        # user = request.user
-        booking=super(BookingForm, self).save(request)
-        booking.username = request.user
-        booking.service_type = self.cleaned_data['service_type']
-        booking.date = self.cleaned_data['date']
-        booking.mentions = self.cleaned_data['mentions']
+    # def save(self, request):
+    #     # user = request.user
+    #     booking=super(BookingForm, self).save(request)
+    #     # booking.username = request.user.username
+    #     booking.service_type = self.cleaned_data['service_type']
+    #     booking.date = self.cleaned_data['date']
+    #     booking.mentions = self.cleaned_data['mentions']
 
-        user.save()
-        return user
+    #     booking.save()
+    #     return booking
 
     class Meta:
         model = Booking
