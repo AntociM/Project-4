@@ -79,15 +79,17 @@ class Booking(models.Model):
         ('recycling', 'Recycling'),
         ('relocation', 'Relocation Assistance'),
     ]
-
     APPROVED = ((0, 'No'), (1, 'Yes'))
+
     username = models.CharField(max_length=30)
-    date = models.DateField(default=datetime.date.today)
-    mentions = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
-    approved = models.IntegerField(choices=APPROVED, default=False)
     service_type = models.CharField(max_length=30, choices=SERVICE_TYPE, default='Weekly Cleaning',)
+    date = models.DateField(default=datetime.date.today)
+    mentions = models.TextField(blank=True)
+    approved = models.IntegerField(choices=APPROVED, default=False)
+   
+   
 
     class Meta:
         ordering: ['date'] 

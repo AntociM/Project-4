@@ -81,17 +81,6 @@ class BookingForm(forms.Form):
     date = forms.DateField(widget = forms.SelectDateWidget)
     mentions = forms.CharField()
 
-    # def save(self, request):
-    #     # user = request.user
-    #     booking=super(BookingForm, self).save(request)
-    #     # booking.username = request.user.username
-    #     booking.service_type = self.cleaned_data['service_type']
-    #     booking.date = self.cleaned_data['date']
-    #     booking.mentions = self.cleaned_data['mentions']
-
-    #     booking.save()
-    #     return booking
-
     class Meta:
         model = Booking
 

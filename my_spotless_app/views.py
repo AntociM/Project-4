@@ -38,6 +38,7 @@ def booking_view(request):
             booking.username = request.user.username
             booking.date = form.cleaned_data['date']
             booking.mentions = form.cleaned_data['mentions']
+            booking.service_type = form.cleaned_data['service_type']
             booking.save()
     else:
         form = BookingForm()
