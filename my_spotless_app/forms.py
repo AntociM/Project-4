@@ -47,6 +47,8 @@ class CustomSignupForm(SignupForm):
     phone = forms.CharField(
         max_length=12, label='Phone number')
     address = forms.CharField(max_length=100, label='Address')
+    city = forms.CharField(max_length=60, label='City')
+    postcode = forms.CharField(max_length=5, label='Postcode', help_text='Required')
     housing_type = forms.ChoiceField(choices=HOUSING_TYPE)
     surface_sqm = forms.IntegerField()
 
@@ -56,6 +58,8 @@ class CustomSignupForm(SignupForm):
         user.last_name = self.cleaned_data['last_name']
         user.phone = self.cleaned_data['phone']
         user.address = self.cleaned_data['address']
+        user.city = self.cleaned_data['city']
+        user.postcode = self.cleaned_data['postcode']
         user.housing_type = self.cleaned_data['housing_type']
         user.surface_sqm = self.cleaned_data['surface_sqm']
         user.save()
