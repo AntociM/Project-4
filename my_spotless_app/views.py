@@ -64,14 +64,9 @@ def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            contact = Contact()
-            contact.name = request.user.name
-            contact.telephone = form.cleaned_data['telephone']
-            contact.email = form.cleaned_data['email']
-            contact.message = form.cleaned_data['message']
-            contact.save()
+            form.save()
+            form = ContactForm()
     else:
         form = ContactForm()
 
     return render(request, 'contact.html', {'form': form})
-

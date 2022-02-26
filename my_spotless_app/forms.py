@@ -48,7 +48,7 @@ class CustomSignupForm(SignupForm):
         max_length=12, label='Phone number')
     address = forms.CharField(max_length=100, label='Address')
     city = forms.CharField(max_length=60, label='City')
-    postcode = forms.CharField(max_length=5, label='Postcode', help_text='Required')
+    postcode = forms.CharField(max_length=5, label='Postcode')
     housing_type = forms.ChoiceField(choices=HOUSING_TYPE)
     surface_sqm = forms.IntegerField()
 
@@ -79,4 +79,4 @@ class ContactForm(forms.ModelForm):
 
     class Meta:
         model = Contact
-        fields = ['name', 'telephone', 'message']
+        fields = ['name', 'email', 'telephone', 'message']
