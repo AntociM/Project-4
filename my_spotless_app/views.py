@@ -9,6 +9,10 @@ def home_page_view(request):
     context = {}
     return render(request, "index.html", context)
 
+def services_view(request):
+    context = {}
+    return render(request, "services.html", context)
+
 @login_required
 def edit_profile(request):
     if request.method == 'POST':
