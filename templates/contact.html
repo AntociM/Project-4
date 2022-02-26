@@ -6,33 +6,33 @@
 {% block head_title %}{% trans "Contact us" %}{% endblock %}
 
 {% block base_content %}
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col">
+        <div class="col-12 mt-2 mb-2 d-flex justify-content-center">
             <h1>{% trans "Contact" %}</h1>
-            <p>{% blocktrans %} Contact us directly if you have any questions.{% endblocktrans %}</p>
-            <P>{% blocktrans %}Please write your name, email address and a message below if you have any questions.
-                One of our staff members will be happy to contact you directly and answer your questions as soon as
-                possible{% endblocktrans %}</P>
         </div>
-    </div>
+    <div class="row">
+        <div class="col-12 mt-2 mb-5 d-flex gx-10 justify-content-center">
+            <p>{% blocktrans %} Contact us directly if you have any questions. One of our staff members will be happy to contact you and answer your questions as soon as
+                possible.{% endblocktrans %}</p>
+        </div>
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-4 offset-2">
             <form action="./contact" method="POST" class="form">
                 {% csrf_token %}
 
                 {% bootstrap_form form layout='horizontal' %}
-                {% bootstrap_button button_type="submit" content="Send" %}
+                {% bootstrap_button button_type="submit" id="contact-button" content="Send" %}
             </form>
         </div>
-        <div class="col-6">
+        <div class="col-4 offset-1 gx-5 ">
             <p>{% blocktrans %} <img src="data:image/png;base64,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">
                 Koppärvägen 55<br>176 72, Stockholm<br>Sweden
                 {% endblocktrans %}</p>
             <p>{% blocktrans %} <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAA0BJREFUaEPtWltIVEEY/mbOXlxdDd1tva4XyCAoC80ExRTqrXrN6iEpkhR8qMcgKip6LUiwzbfsos9FL1F5QUONJAuCEtN22V11V3E1d1fPORN7ZF/EPXvVImbgPM3/z/m/+b//n4FvCKKMRpvTLBHxJiXktMyYJZp9KuYpMMsI6dUGye237UVetTWJ2mRN11RuGtOOUMqKKguMgjldC6rqkXz4MgPmf69j3LUiSTLsorRWM9y2Zy7Syqrh1NtmunUCPdNanafJSdckH10cK3hXRTwac0siY88GWoqb4wZQZfuozaCW5YaSLH1j2a44fp060/c/lzAw7QtSp9XYd4uIW60cMQP1tul8EOps2m/Gvt0GxXcpIGFywQ+/KKtGKYCgIi8dvjUZBAyZOgET7lVIYKp+Bg1FucmALL2g2H2b96P3qwdgcsHg5VJXXAAauxxFEpPt5yrM2GsywO5bw9PPc5BkIE2jXgir6zKOlmQp4Ya+kPXgjA/pWqoKICAyCBQ4f8iCwkwdvnv9eD7hgUCota+lyJEUgBdfPGCQ0HHKEhXAvf4FDEz7caI8G4wBr38soqHMgGsNOVEBtL+cA4GAswfMqQXQOepGbYkeV+uyo5J8OSjj+hsvxl0BxbayMA13j5tg1KlnIGR7f2gRwzNBtB3JSzGAMTfqSvS4UhsdQBihe0UEAUGucYPTsYwHw4sYCgGo/gcAxBLwZhsOILwjm7tQZwIU4hlIZRvlGYiRT7yIeRHHSJVIZpxCnEKcQvwyt8EBfhdKsBZ4G+VtNEHqhN04hTiFOIX4ScxP4qSqgLdR3kaTIhDAKfT/UigOgSMZFm2bwNEz4YFMJDw8aYFBuz1isX+dof3VHOh2SEwO3xq6YxT5Es1AWORrPmhBQVaSIt9WMqsvKCm6VSCKzJoogDQNVRTRlMisitBNLMsNpX9P6H43pQjdAcFlzYxb6A7tYv1j+xOtgLOth/M0ph1+auDxi7CNuiVJZN39rcUXImVVtRprOyctGkE3QgmsVaHHHhk799jjk3NFYsAvWdDWDF7Mn08IQMjpWIfDtK5nNwhjTcpzG0K2pwWFI2SMCZTMSjJ6RIHc+XDJuqBWU38AUe9HbVo2QfcAAAAASUVORK5CYII=">
                 0200 - 15 78 56<br>Open: 8-17 on weekdays
-                {% endblocktrans %}></p>
+                {% endblocktrans %}</p>
             <p>{% blocktrans %} <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAwdJREFUaEPtl01IlEEYx3/zuuamayRJWlkoZBgVuOohiG4pdYgSO4qdo+iomxBtRGpeBa9JREdT7FJ2C6GDX5fQ9JCkhYIRuepuuvtOjOtqrru27uyHxju3d5l55v+b//M8OyPY50Psc/1YAOl20HLAckDzBKwU0jxA7eWWA9pHqBkgugPtI6VIUaQZPzHLhZyh0TkZKVh0gNbhDgT3EqNAO0oHror7uwNoGe7E4I721okIIGUnDyrv7g4g5ICUqwiRaQioKsyhvOBgIiRFjTE272Pg2yKmXJviB2xAHA6EAEzeYnAcuKAiluZlcfmUA5tIbAMLSBiYWWT8hy8IJ+VnYBohrugBQDe+rNvYvc/BuKVi52fbqCnOxXEgIyFuLK+a9E95mFtaDcXrw7dSjz2rC2StPoCrog4pBW0jjcBTBBl2m0F1SS7HcjK1IOaW/PRPLaAgkFJiiHa8zmbcwqRtpDtxACGZrUNXEbwCkafq4tIJB2fz7XFBhOX7AogGXM7ejWBJAVDRW4dOY/AaKc6rTwWgQBRQLMOUksHZZUbnvJv5blBLU+XYlvVJA1C7uD85sP/uAurUZ0GOjeriQ2RnGjsy+Pwm76c8fF9cz3cp3iAC9biqfm1bmFSAYKcI1oWQLSAMJb6mJJej2ZHrYt7r590XD4srge35Hgk76QChTduGr4FUdXE4Q9VFkYOyI1vrYvKnjw9fl/BLqcR7MIwGmpw9O9qVMoBQXSB7EMa5v+sCwvIdcwIhbm7L97Q6ENrc/fEQdtsLMG6onwrXW+zsRn83e/H5G3BfXIil2JPTRv+1s6qLZyMPQT5SdbHeZkwQj2lyPkGI4CUhlpHSFAoX1DZ0HcTLdYB6XJV9sWhOXRuNRU3LYNnatOaq8Vimp76NxqVqF4vSmkK70Bl1qgUQfFJ2o26j6RiWA/+JA+rWZqYjgzb/CHXexOlRHr5rHI/6ltEzZJgn94T+gDFNc/lEJC0xvqH2BEZEERZAur2xHLAc0DwBK4U0D1B7ueWA9hFqBtj3DvwBXRGFQFqtD2cAAAAASUVORK5CYII=">
                 info@spotless.se 
                 {% endblocktrans %}</p>
