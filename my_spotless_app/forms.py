@@ -64,20 +64,7 @@ class CustomSignupForm(SignupForm):
         model = CustomUser
 
 
-class BookingForm(forms.Form):
-    SERVICE_TYPE = [
-        ('weekly', 'Weekly Cleaning'),
-        ('general', 'General Cleaning'),
-        ('moveout', 'Moveout Cleaning'),
-        ('window', 'Window Cleaning'),
-        ('gardening', 'Gardening'),
-        ('craft', 'Simpler Crafts'),
-        ('recycling', 'Recycling'),
-        ('relocation', 'Relocation Assistance'),
-    ]
-    service_type = forms.ChoiceField(choices=SERVICE_TYPE)
-    date = forms.DateField(widget=forms.SelectDateWidget)
-    mentions = forms.CharField(widget=forms.Textarea)
-
+class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
+        fields = ['service_type', 'date', 'mentions', 'approved']

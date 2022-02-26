@@ -44,7 +44,18 @@ def booking_view(request):
     return render(request, 'booking.html', {'form': form})
 
 def booking_display(request):
+    bookings = Booking.objects.filter(username=request.user). only('username', 'date', 'service_type', 'mentions', 'approved')
 
-    bookings = Booking.objects.filter(username=request.user). only('username', 'date', 'service_type', 'mentions')
+    booking_forms = []
 
-    return render(request, 'profile-dashboard.html', {'bookings': bookings})
+    for booking in bookings:
+        form = BookingForm(instance=booking)
+        # form.service_type = booking.service_type
+        # form.date = booking.date
+        # form.mentions = booking.mentions
+        booking_forms.append(form)
+
+    return render(request, 'profile-dashboard.html', {
+        'bookings': bookings,
+        'booking_forms': booking_forms
+    })
