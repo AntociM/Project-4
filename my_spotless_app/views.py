@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserChangeForm
-from .forms import BookingForm
+from .forms import BookingForm, ContactForm
 from .models import Booking
 
 
@@ -59,3 +59,19 @@ def booking_display(request):
         'bookings': bookings,
         'booking_forms': booking_forms
     })
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            contact = Contact()
+            contact.name = request.user.name
+            contact.telephone = form.cleaned_data['telephone']
+            contact.email = form.cleaned_data['email']
+            contact.message = form.cleaned_data['message']
+            contact.save()
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})
+

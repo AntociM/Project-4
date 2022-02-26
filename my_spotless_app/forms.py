@@ -3,6 +3,7 @@ from allauth.account.forms import SignupForm
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
 from .models import Booking
+from .models import Contact
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -68,3 +69,10 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ['service_type', 'date', 'mentions', 'approved']
+
+
+class ContactForm(forms.ModelForm):
+
+    class Meta:
+        model = Contact
+        fields = ['name', 'telephone', 'message']
