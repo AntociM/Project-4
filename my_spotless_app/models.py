@@ -100,9 +100,9 @@ class Booking(models.Model):
 class Contact(models.Model):
     REPLIED = ((0, 'No'), (1, 'Yes'))
     name = models.CharField(max_length=100, null=False, blank=False)
-    telephone = PhoneNumberField(null=False, blank=False, unique=True)
+    telephone = PhoneNumberField(null=False, blank=False, unique=False)
     email = models.EmailField(
-        max_length=50, blank=False, help_text='Email must include "@"')
+        max_length=50, blank=False)
     message = models.TextField(blank=False, null=False)
     replied = models.IntegerField(choices=REPLIED, default=False)
     created = models.DateTimeField(auto_now=True)
