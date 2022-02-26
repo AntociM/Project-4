@@ -1,0 +1,22 @@
+{% extends "base-no-footer.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Contact us" %}{% endblock %}
+
+{% block base_content %}
+<div style="margin:80px">
+    <h1>Contact</h1>
+    <h4>Contact us directly if you have any questions</h4>
+    <p>
+        Please write your name, email address and a message below if you have any questions.
+        One of our staff members will be happy to contact you directly and answer your questions as soon as possible.
+    </p>
+    <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class= "btn btn-signup" type="submit">{% trans "Submit" %} &raquo;</button>
+      </form>
+</div>
+
+{% endblock %}
