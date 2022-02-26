@@ -73,3 +73,21 @@ span {
 #contact-button {
     color: rgb(129, 24, 24);
 }
+
+.services-img {
+    background-image: url("https://res.cloudinary.com/capsunica/image/upload/v1645906162/services_syafvs.jpg") ;
+    background-position: center 20% ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+}
+
+.service-container {
+    background-color:rgba(152,170,172,0.5);
+    /* background-color:rgba(90,100,93,0.7); */
+
+}
+
+#weekly {
+    align-items: flex-end;
+}
