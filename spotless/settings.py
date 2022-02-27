@@ -48,10 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'django_bootstrap5',
+    'djmoney',
     'cloudinary',
     'my_spotless_app',
 ]
