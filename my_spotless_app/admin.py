@@ -27,6 +27,6 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ['username', 'service', 'date', 'approved']
-    list_filter = ['username', 'service', 'date', 'approved']
+    list_display = ['username', 'service', 'date', 'state']
+    list_filter = ['username', 'service', 'date', 'state']
     search_fields = ['username', 'service']

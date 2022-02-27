@@ -70,7 +70,7 @@ class Service(models.Model):
 
 
 class Booking(models.Model):
-    APPROVED = ((0, 'No'), (1, 'Yes'))
+    STATE = ((0, 'Waiting for approval'), (1, 'Approved'), (1, 'In progress'), (2, 'Blocked'), (3, 'Done'))
 
     username = models.CharField(max_length=30)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -78,7 +78,7 @@ class Booking(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     date = models.DateField(default=datetime.date.today)
     mentions = models.TextField(blank=True)
-    approved = models.IntegerField(choices=APPROVED, default=False)
+    state = models.IntegerField(choices=STATE, default=False)
 
     class Meta:
         ordering: ['date']
