@@ -66,6 +66,7 @@ class Service(models.Model):
     price = MoneyField(max_digits=14, decimal_places=2, default_currency='SEK')
     description = models.TextField(blank=False, null=False)
     requisite = models.TextField(blank=False, null=False)
+    picture_url = models.TextField(blank=False, null=False)
 
 
 class Booking(models.Model):
