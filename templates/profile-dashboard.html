@@ -23,9 +23,8 @@
       <form action="" method='POST' class="form-inline" style="margin: 8px;padding: 8px;">
         {% csrf_token %}
         {% bootstrap_form i.form layout='horizontal' %}
-        <button name="{{ i.entry.pk }}" class="btn btn-primary" type="submit">Save changes</button>
-        <button name="{{ i.entry.pk }}" class="btn btn-danger" type="reset">Cancel booking</button>
-
+        <button name="update{{ i.entry.pk }}" class="btn btn-primary" type="submit">Save changes</button>
+        <button name="delete{{ i.entry.pk }}" class="btn btn-danger" type="submit">Cancel booking</button>
       </form>
 
     </div>

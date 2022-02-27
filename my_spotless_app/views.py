@@ -58,16 +58,15 @@ def booking_display(request):
         bookings = Booking.objects.all()
         instance = None
         for booking in bookings:
-            if str(booking.pk) in request.POST:
-                instance = booking
+            if f'update{str(booking.pk)}' in request.POST:
+                # instance = booking
+                form = BookingForm(request.POST, instance=booking)
+                if form.is_valid():
+                    form.save()
                 break
-
-        if instance is None:
-            raise exceptions.FieldError()
-
-        form = BookingForm(request.POST, instance=instance)
-        if form.is_valid():
-            form.save()
+            if f'delete{str(booking.pk)}' in request.POST:
+                booking.delete()
+                break
     
     bookings = Booking.objects.filter(username=request.user)
     bookings_collection = []
