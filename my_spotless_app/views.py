@@ -40,7 +40,7 @@ def booking_view(request):
             booking.username = request.user.username
             booking.date = form.cleaned_data['date']
             booking.mentions = form.cleaned_data['mentions']
-            booking.service_type = form.cleaned_data['service_type']
+            booking.service = form.cleaned_data['service']
             booking.save()
     else:
         form = BookingForm()
@@ -48,7 +48,7 @@ def booking_view(request):
     return render(request, 'booking.html', {'form': form})
 
 def booking_display(request):
-    bookings = Booking.objects.filter(username=request.user). only('username', 'date', 'service_type', 'mentions', 'approved')
+    bookings = Booking.objects.filter(username=request.user). only('username', 'date', 'service', 'mentions', 'approved')
 
     booking_forms = []
 

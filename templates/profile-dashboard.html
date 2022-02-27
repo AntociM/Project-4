@@ -11,7 +11,7 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="heading{{ i.id }}">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ i.id }}" aria-expanded="false" aria-controls="collapse{{ i.id }}">
-        {{ i.date }} - {{ i.service_type }} - {{ i.approved }}
+        {{ i.date }} - {{ i.service.name }} - {{ i.approved }}
       </button>
     </h2>
     <div id="collapse{{ i.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ i.id }}" data-bs-parent="#accordionExample">

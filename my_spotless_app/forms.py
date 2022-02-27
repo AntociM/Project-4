@@ -72,7 +72,7 @@ class CustomSignupForm(SignupForm):
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['service_type', 'date', 'mentions', 'approved']
+        fields = ['service', 'date', 'mentions']
 
 
 class ContactForm(forms.ModelForm):

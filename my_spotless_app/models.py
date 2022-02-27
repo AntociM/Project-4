@@ -61,32 +61,20 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def get_absolute_url(self):
         return "/users/%i/" % (self.pk)
 
-
-class Member(models.Model):
-    user = models.OneToOneField(
-        CustomUser, on_delete=models.CASCADE, unique=True, null=True, related_name='registered')
-    registered = models.BooleanField(default=False)
-    date_joined = models.DateField(auto_now=True)
+class Service(models.Model):
+    name = models.CharField(max_length=100, null=False, blank=False, primary_key=True)
+    price = MoneyField(max_digits=14, decimal_places=2, default_currency='SEK')
+    description = models.TextField(blank=False, null=False)
+    requisite = models.TextField(blank=False, null=False)
 
 
 class Booking(models.Model):
-    SERVICE_TYPE = [
-        ('weekly', 'Weekly Cleaning'),
-        ('general', 'General Cleaning'),
-        ('moveout', 'Moveout Cleaning'),
-        ('window', 'Window Cleaning'),
-        ('gardening', 'Gardening'),
-        ('craft', 'Simpler Crafts'),
-        ('recycling', 'Recycling'),
-        ('relocation', 'Relocation Assistance'),
-    ]
     APPROVED = ((0, 'No'), (1, 'Yes'))
 
     username = models.CharField(max_length=30)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
-    service_type = models.CharField(
-        max_length=30, choices=SERVICE_TYPE, default='Weekly Cleaning',)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
     date = models.DateField(default=datetime.date.today)
     mentions = models.TextField(blank=True)
     approved = models.IntegerField(choices=APPROVED, default=False)
@@ -117,9 +105,4 @@ class Contact(models.Model):
     def __str__(self):
         return str(self.name)
 
-class Service(models.Model):
-    name = models.CharField(max_length=100, null=False, blank=False)
-    price = MoneyField(max_digits=14, decimal_places=2, default_currency='SEK')
-    description = models.TextField(blank=False, null=False)
-    requisite = models.TextField(blank=False, null=False)
 
