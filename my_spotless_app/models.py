@@ -70,7 +70,7 @@ class Service(models.Model):
 
 
 class Booking(models.Model):
-    STATE = ((0, 'Waiting for approval'), (1, 'Approved'), (1, 'In progress'), (2, 'Blocked'), (3, 'Done'))
+    STATE = ((0, 'WAITING FOR APPROVAL'), (1, 'APPROVED'), (1, 'IN PROGRESS'), (2, 'BLOCKED'), (3, 'DONE'))
 
     username = models.CharField(max_length=30)
     created_on = models.DateTimeField(auto_now_add=True)

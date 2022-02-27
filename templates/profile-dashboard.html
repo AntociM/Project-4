@@ -1,5 +1,7 @@
 {% extends "profile-base.html" %}
 {% load django_bootstrap5 %}
+{% load util_tags %}
+
 
 {% block profile-content %}
 
@@ -12,7 +14,15 @@
   <h2 class="accordion-header" id="heading{{ i.entry.pk }}">
     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
       data-bs-target="#collapse{{ i.entry.id }}" aria-expanded="false" aria-controls="collapse{{ i.entry.pk }}">
-      {{ i.entry.date }} - {{ i.entry.service.name }} - {{ i.entry.get_state_display }}
+      <div class="col-4">
+        {{ i.entry.service.name }}
+      </div>
+      <div class="col-4">
+        {{ i.entry.date }}
+      </div>
+      <div class="col-4">
+        <span class="badge {% status_label i.entry.get_state_display %}">{{ i.entry.get_state_display }}</span>
+      </div>
     </button>
   </h2>
   <div id="collapse{{ i.entry.pk }}" class="accordion-collapse collapse" aria-labelledby="heading{{ i.entry.pk }}"
