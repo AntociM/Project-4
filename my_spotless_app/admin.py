@@ -5,6 +5,7 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser
 from .models import Service
 from .models import Contact
+from .models import Booking
 
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
@@ -23,3 +24,9 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ['name', 'title', 'email', 'replied']
     search_fields = ['name', 'title', 'email', 'telephone', 'message']
 
+
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
+    list_display = ['username', 'service', 'date', 'approved']
+    list_filter = ['username', 'service', 'date', 'approved']
+    search_fields = ['username', 'service']
