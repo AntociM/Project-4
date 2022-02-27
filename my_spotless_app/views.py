@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core import exceptions
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserChangeForm
 from .forms import BookingForm, ContactForm
@@ -9,10 +10,12 @@ def home_page_view(request):
     context = {}
     return render(request, "index.html", context)
 
+
 def services_view(request):
     services = Service.objects.all()
     context = {'services': services}
     return render(request, "services.html", context)
+
 
 @login_required
 def edit_profile(request):
@@ -33,6 +36,7 @@ def profile_dashboard_view(request):
     }
     return render(request, "profile-dashboard.html", context)
 
+
 def booking_view(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -48,22 +52,39 @@ def booking_view(request):
 
     return render(request, 'booking.html', {'form': form})
 
-def booking_display(request):
-    bookings = Booking.objects.filter(username=request.user). only('username', 'date', 'service', 'mentions', 'approved')
 
-    booking_forms = []
+def booking_display(request):
+    if request.method == 'POST':
+        bookings = Booking.objects.all()
+        instance = None
+        for booking in bookings:
+            if str(booking.pk) in request.POST:
+                instance = booking
+                break
+
+        if instance is None:
+            raise exceptions.FieldError()
+
+        form = BookingForm(request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+    
+    bookings = Booking.objects.filter(username=request.user)
+    bookings_collection = []
 
     for booking in bookings:
         form = BookingForm(instance=booking)
-        # form.service_type = booking.service_type
-        # form.date = booking.date
-        # form.mentions = booking.mentions
-        booking_forms.append(form)
+        bookings_collection.append(
+            {
+                'form': form,
+                'entry': booking
+            }
+        )
 
     return render(request, 'profile-dashboard.html', {
-        'bookings': bookings,
-        'booking_forms': booking_forms
+        'bookings': bookings_collection
     })
+
 
 def contact_view(request):
     if request.method == 'POST':
