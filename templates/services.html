@@ -6,17 +6,48 @@
         <div class="px-4 py-5 services-img">
             <h2 class="display-5 justify-content-left mt-30 ">Here’s How It Works</h2>
             <div class="col-lg-5  mt-5 justify-content-left">
-                <p class="lead mb-4" id="services-intro">Because each home is unique, we adapt our cleaning to your requirements. <br> We have an introductory call with every new client.
+                <p class="lead mb-4" id="services-intro">Because each home is unique, we adapt our cleaning to your
+                    requirements. <br> We have an introductory call with every new client.
                     We discuss your preferences and expectations. After that, we take care of everything.
-                    
+
                 </p>
-                <p>You can easily book online, from<span> 24&euro;/h</span> after the tax deduction.</span>Final price depends on the service type, how many tasks you have in mind, and your house surface.
-                    You will receive electronic bill.</p></p>
+                <p>You can easily book online, from<span> 24&euro;/h</span> after the tax deduction.</span>Final price
+                    depends on the service type, how many tasks you have in mind, and your house surface.
+                    You will receive electronic bill.</p>
+                </p>
+            </div>
         </div>
-    </div>
+
+        <div class="table-responsive">
+            <table class="table">
+                <!-- <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price per hour</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Prerequisites</th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    {% for i in services %}
+                    <tr>
+                        <th scope="row">
+                            <img src="{{ i.picture_url }}" alt="">
+                        </th>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.price }}</td>
+                        <td>{{ i.description }}</td>
+                        <td>{{ i.requisite }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
 
-    <div class="row service-container mt-5">
+
+
+        <!-- <div class="row service-container mt-5">
         <div id="weekly">
             <h4>Weekly Cleaning</h4>
         </div>
@@ -28,8 +59,8 @@
             <h2>We Perform</h2>
         </div>
         
+    </div> -->
     </div>
-</div>
-   
 
-{%endblock%}
+
+    {%endblock%}

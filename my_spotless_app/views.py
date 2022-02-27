@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserChangeForm
 from .forms import BookingForm, ContactForm
-from .models import Booking
+from .models import Booking, Service
 
 
 def home_page_view(request):
@@ -10,7 +10,8 @@ def home_page_view(request):
     return render(request, "index.html", context)
 
 def services_view(request):
-    context = {}
+    services = Service.objects.all()
+    context = {'services': services}
     return render(request, "services.html", context)
 
 @login_required
