@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
 from .models import Booking
 from .models import Contact
+from .models import Service
 
 
 class DateInput(forms.DateInput):
@@ -72,7 +73,13 @@ class CustomSignupForm(SignupForm):
         model = CustomUser
 
 
+class ServiceModelChoiceField(forms.ModelChoiceField):
+    def label_from_instance(self, obj):
+        return obj.name
+
 class BookingForm(forms.ModelForm):
+    service = ServiceModelChoiceField(queryset=Service.objects.all())
+
     class Meta:
         model = Booking
         fields = ['service', 'date', 'mentions']
