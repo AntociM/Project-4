@@ -27,43 +27,41 @@
 
 <body class="d-flex flex-column min-vh-100">
   <!--Navigation-->
-  <div class="row m-0 p-0 navigation">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">Spotless Co.</a>
-        <ul class="nav navbar-nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'services' %}">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-          </li>
-          {% if user.is_authenticated %}
-          <!-- <li class="nav-item">
-          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-          </li> -->
+  <nav class="navbar navbar-expand-md navbar-light mb-4">
+    <a class="navbar-brand" href="{% url 'home' %}">Spotless Co.</a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+        {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'dashboard_profile' %}"> {{ user }}</a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            </li>
           {% else %}
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_login' %}">Login</a>
           </li>
           {% endif %}
-        </ul>
-      </div>
-    </nav>
-  </div>
+      </ul>
+    </div>
+  </nav>
+  
 
   {% block base_content %}
       <!-- Content Goes here -->
