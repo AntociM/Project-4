@@ -105,3 +105,8 @@ span {
     border-left-width: .25rem;
     border-radius: .25rem;
 }
+
+.service_images {
+    height: auto;
+    max-height: 64px;
+}
