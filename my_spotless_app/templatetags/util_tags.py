@@ -13,11 +13,11 @@ def navactive(request, urls):
 @register.simple_tag
 def status_label(status):
     if status ==  'WAITING FOR APPROVAL':
-        return "bg-info text-dark"
+        return "bg-info"
     elif  status ==  'APPROVED' :
         return "bg-primary"
     elif status ==  'IN PROGRESS' :
-        return "bg-warning text-dark"
+        return "bg-warning"
     elif status ==  'BLOCKED' :
         return "bg-danger"
     elif status ==  'DONE' :
