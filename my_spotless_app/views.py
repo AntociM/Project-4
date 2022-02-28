@@ -47,8 +47,7 @@ def booking_view(request):
             booking.mentions = form.cleaned_data['mentions']
             booking.service = form.cleaned_data['service']
             booking.save()
-    else:
-        form = BookingForm()
+    form = BookingForm()
 
     return render(request, 'booking.html', {'form': form})
 
