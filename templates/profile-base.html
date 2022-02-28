@@ -5,8 +5,8 @@
 {% block content %}
 {% if user.is_authenticated %}
 <div class="container m-0 p-0">
-    <div class="row flex-nowrap">
-        <div class="col-2 d-flex flex-column flex-shrink-0 p-3" style="width: 280px;">
+    <div class="row flex-sm-nowrap">
+        <div class="col-sm-2 p-4">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
                     <a href="{% url 'dashboard_profile' %}" class="nav-link {% navactive request 'dashboard_profile' %}" aria-current="page">
@@ -28,7 +28,7 @@
             </ul>
         </div>
     
-        <div class="col-10">
+        <div class="col-sm-10 p-4">
             {% block profile-content %}
             
             {% endblock profile-content %}
