@@ -32,7 +32,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['spotlessco.herokuapp.com', 'localhost']
 
@@ -151,6 +151,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 DEFAULT_FILES_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'capsunica',
+    'API_KEY': '532162846665373',
+    'API_SECRET': 'ET_9YLcjBSYSjZ7hFcwTR25TPLQ'
+}
+
+# CLOUDINARY_URL = "cloudinary://532162846665373:ET_9YLcjBSYSjZ7hFcwTR25TPLQ@capsunica"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
