@@ -1,16 +1,15 @@
 {% extends "profile-base.html" %}
-{% load django_bootstrap5 %}
+{% load crispy_forms_tags %}
 
 {% block profile-content %}
 
 <div class="container-fluid">
   <form action="./booking" method="POST" class="form">
     {% csrf_token %}
-  
-    {% bootstrap_form form layout='horizontal' %}
-  
-    {% bootstrap_button button_type="submit" content="Save" %}
-    {% bootstrap_button button_type="reset" content="Clear" %}
+    {{ form|crispy }}
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="reset" class="btn btn-primary">Clear</button>
     <div class="container-fluid">
       <div class="row">
         <div class="col-8 offset-4 justify-content-center ">

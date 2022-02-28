@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    "crispy_bootstrap5",
     'django_bootstrap5',
     'djmoney',
     'cloudinary',
@@ -171,4 +173,8 @@ ACCOUNT_FORMS = {
 }
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 # ACCOUNT_SIGNUP_FORM_CLASS = '{{ repo_name }}.my_spotless_app.forms.CustomSignupForm'
