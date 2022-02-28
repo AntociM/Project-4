@@ -6,6 +6,9 @@ from .models import Booking
 from .models import Contact
 
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
 class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
@@ -73,6 +76,9 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ['service', 'date', 'mentions']
+        widgets = {
+            'date': DateInput(),
+        }
 
 
 class ContactForm(forms.ModelForm):
