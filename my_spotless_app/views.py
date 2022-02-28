@@ -49,6 +49,7 @@ def booking_view(request):
             booking.date = form.cleaned_data['date']
             booking.mentions = form.cleaned_data['mentions']
             booking.service = form.cleaned_data['service']
+            messages.success(request, 'Booking completed. Someone will contact you.')
             booking.save()
             # send_booking_confirmation(request.user, booking)
 
