@@ -167,6 +167,12 @@ ACCOUNT_FORMS = {
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-
 CRISPY_TEMPLATE_PACK = "bootstrap5"
-# ACCOUNT_SIGNUP_FORM_CLASS = '{{ repo_name }}.my_spotless_app.forms.CustomSignupForm'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TSL = True
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = "my.spotless.app@gmail.com"
