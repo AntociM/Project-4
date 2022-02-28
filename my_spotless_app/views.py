@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import CustomUserChangeForm
 from .forms import BookingForm, ContactForm
 from .models import Booking, Service
-from .utils import send_booking_cancelation, send_booking_confirmation, send_booking_update
+from django.contrib import messages 
+# from .utils import send_booking_cancelation, send_booking_confirmation, send_booking_update
 
 
 
@@ -59,25 +60,32 @@ def booking_view(request):
 def booking_display(request):
     if request.method == 'POST':
         bookings = Booking.objects.all()
-        instance = None
+        found_booking = 0
         for booking in bookings:
             if f'update{str(booking.pk)}' in request.POST:
-                # instance = booking
+                found_booking = 1
                 form = BookingForm(request.POST, instance=booking)
                 if form.is_valid():
                     form.save()
+                    messages.success(request, 'Booking successfully updated!')
                     # send_booking_update(request.user, booking)
                 break
             if f'delete{str(booking.pk)}' in request.POST:
                 # send_booking_cancelation(request.user, booking)
+                found_booking = 1
                 booking.delete()
+                messages.success(request, 'Booking successfully removed!')
                 break
-    
+        if not found_booking:
+            messages.error(request, 'Did not find booking. Please contact support!')
+
+
     bookings = Booking.objects.filter(username=request.user)
     bookings_collection = []
 
     for booking in bookings:
         form = BookingForm(instance=booking)
+        form.fields['service'].disabled = True
         bookings_collection.append(
             {
                 'form': form,
