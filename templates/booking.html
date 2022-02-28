@@ -1,22 +1,34 @@
 {% extends "profile-base.html" %}
-{% load crispy_forms_tags %}
+{% load django_bootstrap5 %}
+
 
 {% block profile-content %}
 
+
+
 <div class="container-fluid">
+  {% if messages %}
+  {% for message in messages %}
+  <div class="container-fluid p-0">
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+      {{ message }}
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
+
   <form action="./booking" method="POST" class="form">
     {% csrf_token %}
-    {{ form|crispy }}
-
+    {% bootstrap_form form layout='horizontal' %}
     <button type="submit" class="btn btn-primary">Save</button>
-    <button type="reset" class="btn btn-primary">Clear</button>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-8 offset-4 justify-content-center ">
-          <p>Please note: <em>It can take up to 48 hours for Admin to approve your request.</em></p>
-        </div>
-      </div>
-    </div>
+    <!-- <button type="reset" class="btn btn-primary">Clear</button> -->
+    
   </form>
+  <div class="callout callout-info">
+    Please note: <em>It can take up to 48 hours for Admin to approve your request.</em>
+    <!-- <p></p> -->
+  </div>
 </div>
 {%endblock %}
