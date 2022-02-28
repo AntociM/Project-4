@@ -49,7 +49,7 @@ def booking_view(request):
             booking.mentions = form.cleaned_data['mentions']
             booking.service = form.cleaned_data['service']
             booking.save()
-            send_booking_confirmation(request.user, booking)
+            # send_booking_confirmation(request.user, booking)
 
     form = BookingForm()
 
@@ -66,10 +66,10 @@ def booking_display(request):
                 form = BookingForm(request.POST, instance=booking)
                 if form.is_valid():
                     form.save()
-                    send_booking_update(request.user, booking)
+                    # send_booking_update(request.user, booking)
                 break
             if f'delete{str(booking.pk)}' in request.POST:
-                send_booking_cancelation(request.user, booking)
+                # send_booking_cancelation(request.user, booking)
                 booking.delete()
                 break
     
