@@ -79,6 +79,59 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 
 ![](docs/Colors.png)
 
+## Data Model
+
+- Spotless website is based on MVC model (Model. View, and Controller). It consists of a database with relationships between models (represented by tables in the above image). The models are CustomUser, Booking, Service, and Contact. The views then render the models in a way dictated by the URLs.
+
+![](docs/mvc.jpg)
+
+## Features
+
+### Existing features
+
+#### Home Page
+
+##### Navigation bar
+
+- It is located at the top of every page—the company's logo on the left-hand side and the menu on the other side. Navigation elements are displayed inline for displays over 750px. The Navigation Bar swifts to a dropdown list for smaller screens, represented by three lines in the top right corner.
+
+![](docs/nav.jpg)
+
+##### Main image and intro
+
+- Located under Navigation, is an image chosen to represent the tidiness of a home, with an overleyed intro text. 
+
+![](docs/home-page-print.jpg)
+
+#### Website interaction
+
+- This section let the user know how can acces the wished service. 
+
+#### Our Goal and About Us 
+- Structured in 2 separated elements, these sections help the user find more information about the company's history and the values and strives that are representative.
+
+![](docs/About us.jpg)
+
+#### Service Overview
+- A responsively styled services display to allow the user a quick overview. Each service has a representative icon next to it. 
+- An embedded link will redirect the user to the services page.
+
+![](docs/services-home.jpg)
+
+#### Testimonials
+
+- The testimonials section provides the user with some feedback from past clients. There are three testimonials displayed giving a picture, feedback and name.
+
+![](docs/testimonials.jpg)
+
+#### Footer
+
+- Footer has a basic style, displays social media links and copyright information.
+
+![](docs/footer.jpg)
+
+
+
 
 
 
