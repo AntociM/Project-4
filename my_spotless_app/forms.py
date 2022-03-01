@@ -1,6 +1,7 @@
 from django import forms
 from allauth.account.forms import SignupForm
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.core.validators import MaxValueValidator, MinValueValidator
 from .models import CustomUser
 from .models import Booking
 from .models import Contact
@@ -54,7 +55,7 @@ class CustomSignupForm(SignupForm):
     city = forms.CharField(max_length=60, label='City')
     postcode = forms.CharField(max_length=5, label='Postcode')
     housing_type = forms.ChoiceField(choices=HOUSING_TYPE)
-    surface_sqm = forms.IntegerField()
+    surface_sqm = forms.IntegerField(validators=[MinValueValidator(20), MaxValueValidator(500)])
 
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)
