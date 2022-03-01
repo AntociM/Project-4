@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import CustomUserChangeForm
 from .forms import BookingForm, ContactForm
 from .models import Booking, Service
-from django.contrib import messages 
+from django.contrib import messages
+from datetime import datetime
 # from .utils import send_booking_cancelation, send_booking_confirmation, send_booking_update
 
 
@@ -49,8 +50,16 @@ def booking_view(request):
             booking.date = form.cleaned_data['date']
             booking.mentions = form.cleaned_data['mentions']
             booking.service = form.cleaned_data['service']
-            messages.success(request, 'Booking completed. Someone will contact you.')
-            booking.save()
+            
+            booking_date = datetime.combine(booking.date, datetime.min.time())  
+            days = (booking_date - datetime.today()).days
+            if booking_date <= datetime.today():
+                messages.error(request, 'You are trying to make a booking on an past date. Please choose another date.')
+            elif days <= 2:
+                messages.error(request, 'You are trying to make a booking with one day notice. Please choose another date.')
+            else:
+                messages.success(request, 'Booking completed. Someone will contact you.')
+                booking.save()
             # send_booking_confirmation(request.user, booking)
 
     form = BookingForm()
@@ -67,8 +76,22 @@ def booking_display(request):
                 found_booking = 1
                 form = BookingForm(request.POST, instance=booking)
                 if form.is_valid():
-                    form.save()
-                    messages.success(request, 'Booking successfully updated!')
+                    booking_date = datetime.combine(booking.date, datetime.min.time())
+                    days = (booking_date - datetime.today()).days
+
+                    # Check if the service has not been changed
+                    if 'service' in form.changed_data:
+                        messages.error(request, 'You are not allowed to change the service type.')
+                    elif 'date' in form.changed_data and booking_date <= datetime.today():
+                        messages.error(request, 'You are trying to modify an old booking. ')
+                    elif 'date' in form.changed_data and days<=1:
+                        messages.error(request, 'You are trying to make a booking with one day notice. Please choose another date.')
+                    else:
+                        form.save()
+                        messages.success(request, 'Booking successfully updated!')
+                    
+                else:
+                    messages.error(request, 'Data introduced is invalid')
                     # send_booking_update(request.user, booking)
                 break
             if f'delete{str(booking.pk)}' in request.POST:
@@ -86,7 +109,6 @@ def booking_display(request):
 
     for booking in bookings:
         form = BookingForm(instance=booking)
-        form.fields['service'].disabled = True
         bookings_collection.append(
             {
                 'form': form,
