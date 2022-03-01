@@ -62,6 +62,27 @@ This user stories are part of agile tools used for this project.  In order to in
 
 ![](docs/user-page.jpg)
 
+Some design changes come up during the development process. One of the changes was integrating About Us as a section on Home Page, compared to the initial design to be a separate page.
+## Site Structure
+
+The application has 3 main pages: Home, Services, and Contact. It also has several additional pages related to Admin, sign up, sign in and sign out.
+
+## Design Choices
+
+### Typhography
+
+- The font family is 'Poppins' from Google fonts. It is a modern, professional font and does not distract user from content.
+
+### Color Pallet
+
+- The primary color used has a pale tint of azure, and on the website, blue in different shadows and hues are present. Blue is associated with professional and modern aspects and gives the user a calming and familiar look.
+
+![](docs/Colors.png)
+
+
+
+
+
 
 
 
