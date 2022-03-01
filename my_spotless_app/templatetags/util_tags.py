@@ -12,7 +12,7 @@ def navactive(request, urls):
 
 @register.simple_tag
 def status_label(status):
-    if status ==  'WAITING FOR APPROVAL':
+    if status ==  'WAITING':
         return "bg-info"
     elif  status ==  'APPROVED' :
         return "bg-primary"
