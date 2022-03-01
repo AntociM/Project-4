@@ -145,6 +145,27 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 ![](docs/contact-form.jpg)
 
 
+#### Sign In page
+
+- The user can log in using his credentials, username, and password. There is a link to sign-up form in the case of a new user.
+
+![](docs/login-page.jpg)
+
+- The CustomSign up form extends the Django classic form with some extra fields. The user is required to add an address, city housing type (chose from a dropdown list), and house surface in sqm. This information is relevant for calculating the exact price of a service.
+
+![](docs/signup_form.jpg)
+
+#### Additional pages 
+
+- When the user is logged in, he can access his account using 'My Account' link from the navbar. Here the user can make a booking, see booking history and status, update or cancel one booking two days before the booked date. The user can as well update his registration information.  
+
+![](docs/user-profile.jpg)
+
+![](docs/booking-form.jpg)
+
+
+
+
 
 
 
