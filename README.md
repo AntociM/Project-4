@@ -103,32 +103,50 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 
 ![](docs/home-page-print.jpg)
 
-#### Website interaction
+##### Website interaction
 
 - This section let the user know how can acces the wished service. 
 
-#### Our Goal and About Us 
+##### Our Goal and About Us 
 - Structured in 2 separated elements, these sections help the user find more information about the company's history and the values and strives that are representative.
 
 ![](docs/About us.jpg)
 
-#### Service Overview
+##### Service Overview
 - A responsively styled services display to allow the user a quick overview. Each service has a representative icon next to it. 
 - An embedded link will redirect the user to the services page.
 
 ![](docs/services-home.jpg)
 
-#### Testimonials
+##### Testimonials
 
 - The testimonials section provides the user with some feedback from past clients. There are three testimonials displayed giving a picture, feedback and name.
 
 ![](docs/testimonials.jpg)
 
-#### Footer
+##### Footer
 
 - Footer has a basic style, displays social media links and copyright information.
 
 ![](docs/footer.jpg)
+
+#### Services Page
+
+- At the top of the page is a representative image with overlayed text providing helpful information.
+- Fallows an enumeration of services. Each service has a representative icon, description, price/h, and a button redirecting the user to the booking form.
+
+![](docs/service-page.jpg)
+
+#### Contact Page
+
+- Styled in 2 columns (contact form and contact information) in full display and for small screens, content stack on top of each other. 
+- On the left-hand side is the contact form, which includes name, email, telephone, title, and message. When a user submits a contact request, the application logs the contact to the database for a record. Initially, all contacts are marked as 'unreplied'. A quick reference to see the contact's status.
+
+![](docs/contact-form.jpg)
+
+
+
+
 
 
 
