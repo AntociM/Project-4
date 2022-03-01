@@ -163,6 +163,15 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 
 ![](docs/booking-form.jpg)
 
+#### Admin Page
+
+-Admin has access via the default Django Admin page. The Admin panel is accessed from the navigation menu once a superuser has logged in. Admin can add/delete users, update booking status, see the contact received via contact platform, and update the website's content
+
+![](docs/admin-panel-bookings.jpg)
+
+![](docs/admin-panel-users.jpg)
+
+
 
 
 
