@@ -62,17 +62,11 @@ span {
 }
 
 .testimonials {
-    background-color: #cae9ff;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.58);
     border-radius: 16px;
     margin-top: 50px;
     margin-bottom: 50px
     }
-
-#contact-button {
-    color: rgb(129, 24, 24);
-}
 
 .services-img {
     background-image: url("https://res.cloudinary.com/capsunica/image/upload/v1645906162/services_syafvs.jpg") ;
