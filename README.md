@@ -36,6 +36,36 @@ This user stories are part of agile tools used for this project.  In order to in
 
 ![](docs/project.jpg)
 
+## Wireframes
+
+- Home page 
+
+![](docs/home-page.jpg)
+
+- Testimonials
+
+![](docs/testimonials.jpg)
+
+- Contact page
+
+![](docs/contact.jpg)
+
+- Login form
+
+![](docs/login-page.jpg)
+
+- Signup form
+
+![](docs/Signup-form.jpg)
+
+- User's dashboard
+
+![](docs/user-page.jpg)
+
+
+
+
+
 
 
 
