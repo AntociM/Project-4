@@ -1,10 +1,11 @@
 import datetime
 from django.utils import timezone
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-# from cloudinary.models import CloudinaryField
+from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import BaseUserManager, PermissionsMixin
 from phonenumber_field.modelfields import PhoneNumberField
 from djmoney.models.fields import MoneyField
+
 
 class UserManager(BaseUserManager):
 

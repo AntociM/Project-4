@@ -6,8 +6,6 @@ from .forms import BookingForm, ContactForm
 from .models import Booking, Service
 from django.contrib import messages
 from datetime import datetime
-# from .utils import send_booking_cancelation, send_booking_confirmation, send_booking_update
-
 
 
 def home_page_view(request):
@@ -50,15 +48,21 @@ def booking_view(request):
             booking.date = form.cleaned_data['date']
             booking.mentions = form.cleaned_data['mentions']
             booking.service = form.cleaned_data['service']
-            
-            booking_date = datetime.combine(booking.date, datetime.min.time())  
+            booking_date = datetime.combine(booking.date, datetime.min.time())
             days = (booking_date - datetime.today()).days
             if booking_date <= datetime.today():
-                messages.error(request, 'You are trying to make a booking on an past date. Please choose another date.')
+                messages.error(
+                    request, 'You are trying to'
+                    'make a booking on an past date.'
+                    'Please choose another date.')
             elif days <= 2:
-                messages.error(request, 'You are trying to make a booking with one day notice. Please choose another date.')
+                messages.error(
+                    request, 'You are trying to make'
+                    'a booking with one day notice.'
+                    'Please choose another date.')
             else:
-                messages.success(request, 'Booking completed. Someone will contact you.')
+                messages.success(
+                    request, 'Booking completed. Someone will contact you.')
                 booking.save()
             # send_booking_confirmation(request.user, booking)
 
@@ -76,20 +80,27 @@ def booking_display(request):
                 found_booking = 1
                 form = BookingForm(request.POST, instance=booking)
                 if form.is_valid():
-                    booking_date = datetime.combine(booking.date, datetime.min.time())
+                    booking_date = datetime.combine(
+                        booking.date, datetime.min.time())
                     days = (booking_date - datetime.today()).days
 
                     # Check if the service has not been changed
                     if 'service' in form.changed_data:
-                        messages.error(request, 'You are not allowed to change the service type.')
+                        messages.error(
+                            request, 'You are not allowed'
+                            'to change the service type.')
                     elif 'date' in form.changed_data and booking_date <= datetime.today():
-                        messages.error(request, 'You are trying to modify an old booking. ')
-                    elif 'date' in form.changed_data and days<=1:
-                        messages.error(request, 'You are trying to make a booking with one day notice. Please choose another date.')
+                        messages.error(
+                            request, 'You are trying to modify an old booking. ')
+                    elif 'date' in form.changed_data and days <= 1:
+                        messages.error(
+                            request, 'You are trying to make a booking with '
+                            'one day notice. Please choose another date.')
                     else:
                         form.save()
-                        messages.success(request, 'Booking successfully updated!')
-                    
+                        messages.success(
+                            request, 'Booking successfully updated!')
+
                 else:
                     messages.error(request, 'Data introduced is invalid')
                     # send_booking_update(request.user, booking)
@@ -101,8 +112,8 @@ def booking_display(request):
                 messages.success(request, 'Booking successfully removed!')
                 break
         if not found_booking:
-            messages.error(request, 'Did not find booking. Please contact support!')
-
+            messages.error(
+                request, 'Did not find booking. Please contact support!')
 
     bookings = Booking.objects.filter(username=request.user)
     bookings_collection = []
@@ -129,5 +140,4 @@ def contact_view(request):
             form = ContactForm()
     else:
         form = ContactForm()
-
     return render(request, 'contact.html', {'form': form})
