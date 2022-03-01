@@ -3,6 +3,7 @@
 
 {% block profile-content %}
 
+<!--Edit signup information-->
 <div class="container-fluid">
   <form action="./edit" method="post" class="form">
     {% csrf_token %}
@@ -10,7 +11,7 @@
     {% bootstrap_form form layout='horizontal' %}
   
     {% bootstrap_button button_type="submit" content="Save" %}
-    <!-- {% bootstrap_button button_type="reset" content="Cancel" %} -->
+
   
   </form>
 </div>

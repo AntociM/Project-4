@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@100;300&display=swap');
 
+/* General settings */
+
 body {
     color: black;
     font-size: large;
@@ -11,6 +13,8 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Home page */
 
 .hero {
     background-image: url("https://res.cloudinary.com/capsunica/image/upload/v1646134252/hero_image_hlew53.webp");
@@ -28,17 +32,6 @@ span {
     font-style: oblique;
     font-weight: 500;
     color: rgb(75, 7, 7);
-}
-
-.btn-signup {
-    background-color: rgb(71, 33, 107);
-    color: white
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: rgb(71, 33, 107);
 }
 
 .steps-icons {
@@ -68,24 +61,18 @@ span {
     margin-bottom: 50px
     }
 
-.services-img {
-    background-image: url("https://res.cloudinary.com/capsunica/image/upload/v1646135419/Goal-min_qq1pjv.webp") ;
-    background-position: center 20% ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 60vh;
+/* Forms */
+
+.btn-signup {
+    background-color: #3E6680;
+    color: white
 }
 
-.service-container {
-    background-color:rgba(152,170,172,0.5);
-    /* background-color:rgba(90,100,93,0.7); */
-
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color:#3E6680
 }
-
-#weekly {
-    align-items: flex-end;
-}
-
 
 .callout-info {
     border-left-color: #5bc0de;
@@ -100,7 +87,31 @@ span {
     border-radius: .25rem;
 }
 
+
+/* Services */
+
+.services-img {
+    background-image: url("https://res.cloudinary.com/capsunica/image/upload/v1646135419/Goal-min_qq1pjv.webp") ;
+    background-position: center 20% ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+}
+
+.service-container {
+    background-color:rgba(152,170,172,0.5);
+}
+
 .service_images {
     height: auto;
     max-height: 64px;
 }
+
+
+#weekly {
+    align-items: flex-end;
+}
+
+
+
+

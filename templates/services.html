@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<!--Page heading-->
 <div class="container-fluid">
     <div class="row pb-5">
         <div class="px-4 py-5 services-img">
@@ -8,7 +10,6 @@
             <div class="col-lg-5  mt-5 justify-content-left">
                 <p class="lead mb-4" id="services-intro">Because each home is unique, we adapt our cleaning to your
                     requirements. <br> We have an introductory call with every new client.
-                    We discuss your preferences and expectations. After that, we take care of everything.
 
                 </p>
                 <p>You can easily book online, from<span> 240 kr/h</span>. Final price
@@ -18,7 +19,7 @@
             </div>
         </div>
     </div>
-
+<!--Services with description and price -->
     {% for i in services %}
     <div class="row justify-content-center">
         <div class="col-md-6 mb-4">
