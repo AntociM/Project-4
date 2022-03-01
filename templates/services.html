@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-<!--Services with description and price -->
+    <!--Services with description and price -->
     {% for i in services %}
     <div class="row justify-content-center">
         <div class="col-md-6 mb-4">
@@ -30,7 +30,7 @@
                     <p class="mt-3 text-muted">{{ i.description }}</p>
                     <h6 class="font-weight-medium">Price/hour: {{ i.price }}</h6>
                     {% if user.is_authenticated %}
-                    <a  class="btn btn-primary" type="button" href="{% url 'booking' %}">Book service</a>
+                    <a class="btn btn-primary" type="button" href="{% url 'booking' %}">Book service</a>
                     {% endif %}
                 </div>
             </div>
@@ -41,7 +41,7 @@
     <div class="row justify-content-center pt-5">
         <div class="col-md-6 mb-4">
             <div class="d-grid gap-2">
-                
+
             </div>
         </div>
     </div>
