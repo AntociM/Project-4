@@ -45,7 +45,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     first_name = models.CharField(max_length=30, null=True, blank=True)
     last_name = models.CharField(max_length=30, null=True, blank=True)
-    # TODO add validation
     phone = models.CharField(max_length=12, null=True)
     address = models.CharField(max_length=100, null=True)
     housing_type = models.CharField(max_length=20, null=True)
@@ -61,6 +60,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def get_absolute_url(self):
         return "/users/%i/" % (self.pk)
+
 
 class Service(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False, primary_key=True)
@@ -94,7 +94,7 @@ class Contact(models.Model):
     telephone = PhoneNumberField(null=False, blank=False, unique=False)
     email = models.EmailField(
         max_length=50, blank=False)
-    title = models.CharField(max_length=100, null=False, blank=False, default=None)
+    title = models.CharField(max_length=100, 'null=False, blank=False, default=None')
     message = models.TextField(blank=False, null=False)
     replied = models.IntegerField(choices=REPLIED, default=False)
     created = models.DateTimeField(auto_now=True)
@@ -106,5 +106,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return str(self.name)
-
-
