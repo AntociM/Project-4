@@ -56,8 +56,10 @@ class CustomSignupForm(SignupForm):
     city = forms.CharField(max_length=60, label='City')
     postcode = forms.CharField(max_length=5, label='Postcode')
     housing_type = forms.ChoiceField(choices=HOUSING_TYPE)
-    surface_sqm = forms.IntegerField
-    (validators=[MinValueValidator(20), MaxValueValidator(500)])
+    surface_sqm = forms.IntegerField(
+        validators=[MinValueValidator(20), 
+        MaxValueValidator(500)]
+    )
 
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)

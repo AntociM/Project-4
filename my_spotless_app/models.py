@@ -94,7 +94,7 @@ class Contact(models.Model):
     telephone = PhoneNumberField(null=False, blank=False, unique=False)
     email = models.EmailField(
         max_length=50, blank=False)
-    title = models.CharField(max_length=100, 'null=False, blank=False, default=None')
+    title = models.CharField(max_length=100, null=False, blank=False, default=None)
     message = models.TextField(blank=False, null=False)
     replied = models.IntegerField(choices=REPLIED, default=False)
     created = models.DateTimeField(auto_now=True)
