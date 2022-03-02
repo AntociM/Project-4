@@ -24,7 +24,7 @@ The responsive design tests were carried out manually with Google Chrome DevTool
 ### Compatibility
 
 The website was tested on Chrome, Edge, Mozilla Firefox. The functionality and appearance remain unchanged between these three on any device size.
-### Manual Testig
+### Manual Testing
 
 The testing targeted especially form fields input. 
 
@@ -34,9 +34,23 @@ The testing targeted especially form fields input.
 
 - User is not allowed to **cancel** his booking more than two days before the booked date, is not permitted to change service type once the booking is done, and is not allowed to edit an old booking (past current date).
 
-- The **surface_sqm** field from the SignUp Form is not allowing the user to add negative values. This is one of the bugs documented in GitHub issues. The solution was adding MinValueValidator, and this field validates values between 20 and 500 sqm.
+- The **surface_sqm** field from the SignUp Form is not allowing the user to add negative values, and this is one of the bugs documented in GitHub issues. The solution was adding MinValueValidator, and this field validates values between 20 and 500 sqm.
 
-### Bugs 
+### Fixed Bugs 
+
+During the development process, a series of errors popped up.
+
+- ConnectionReffusedError (error 111) when trying to accees the SignUp. This was solved by setting validation email =’none’.
+
+![](docs/refusedError.jpg)
+
+- Documented in GitHub issues are other fixed bugs. See: #13, #15, #16
+
+### Known Issues
+
+At this moment, there are two open bugs on GitHub issues. The display of multiple messages in the dashboard and the email notification are not working
+#14 and #17
+
 
 
 
