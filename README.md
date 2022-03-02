@@ -1,5 +1,6 @@
 # Spotless Co.
 The Spotless Co. is a presentation website for a fictional professional cleaning company based in Stockholm, Sweden. The company's target group is private clients, who can book services via the website's booking platform. The website is also providing a contact form.
+
 ![Home page]( docs/home-page-print.jpg)
 
 The live site can be viewded [here](https://spotlessco.herokuapp.com/).
@@ -32,7 +33,7 @@ As a **site admin** I can **update the users' list** so that **I can add, edit a
 
 As a **site admin** I can **access the admin page via user interface** so that **I can manage the website**.
 
-This user stories are part of agile tools used for this project.  In order to integrate issues and pull requests, GitHub projects was used.
+This user stories are part of agile tools used for this project.  In order to integrate issues and pull requests, GitHub Projects was used.
 
 ![](docs/project.jpg)
 

@@ -78,7 +78,9 @@ def booking_display(request):
         for booking in bookings:
             if f'update{str(booking.pk)}' in request.POST:
                 found_booking = 1
-                form = BookingForm(request.POST, instance=booking)
+                form = BookingForm(
+                    'request.POST, instance=booking'
+                    )
                 if form.is_valid():
                     booking_date = datetime.combine(
                         booking.date, datetime.min.time())
