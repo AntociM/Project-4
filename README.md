@@ -3,7 +3,7 @@ The Spotless Co. is a presentation website for a fictional professional cleaning
 
 ![Home page]( docs/home-page-print.jpg)
 
-The live site can be viewded [here](https://spotlessco.herokuapp.com/).
+The live site can be viewed [here](https://spotlessco.herokuapp.com/).
 
 ## User Stories
 
@@ -25,7 +25,7 @@ As a **site user** I can **contact the company** so that **I can get more helpfu
 
 As a **site admin** I can **approve or disapprove client's booking requests** so that **I can do operational planning according to available resources**.
 
-As a **site admin** I can **create, read, update and delete content** so that **I can manage my websites content**.
+As a **site admin** I can **create, read, update and delete content** so that **I can manage my website's content**.
 
 As a **site admin** I can **contact our clients** so that **I can inform them in case of any change**.
 
@@ -33,7 +33,7 @@ As a **site admin** I can **update the users' list** so that **I can add, edit a
 
 As a **site admin** I can **access the admin page via user interface** so that **I can manage the website**.
 
-This user stories are part of agile tools used for this project.  In order to integrate issues and pull requests, GitHub Projects was used.
+These user stories are part of the agile tools used for this project. In order to integrate issues and pull requests, GitHub Projects was used.
 
 ![](docs/project.jpg)
 
@@ -66,13 +66,13 @@ This user stories are part of agile tools used for this project.  In order to in
 Some design changes come up during the development process. One of the changes was integrating About Us as a section on Home Page, compared to the initial design to be a separate page.
 ## Site Structure
 
-The application has 3 main pages: Home, Services, and Contact. It also has several additional pages related to Admin, sign up, sign in and sign out.
+The application has three main pages: Home, Services, and Contact. It also has several additional pages related to Admin, sign up, sign in and sign out.
 
 ## Design Choices
 
 ### Typhography
 
-- The font family is 'Poppins' from Google fonts. It is a modern, professional font and does not distract user from content.
+- The font family is 'Poppins' from Google fonts, and it is a modern, professional font and does not distract users from content.
 
 ### Color Pallet
 
@@ -100,13 +100,13 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 
 ##### Main image and intro
 
-- Located under Navigation, is an image chosen to represent the tidiness of a home, with an overleyed intro text. 
+- Located under Navigation is an image chosen to represent the tidiness of a home, with an overlayed intro text. 
 
 ![](docs/home-page-print.jpg)
 
 ##### Website interaction
 
-- This section let the user know how can acces the wished service. 
+- This section lets the user know how can access the wished service. 
 
 ##### Our Goal and About Us 
 - Structured in 2 separated elements, these sections help the user find more information about the company's history and the values and strives that are representative.
@@ -121,13 +121,13 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 
 ##### Testimonials
 
-- The testimonials section provides the user with some feedback from past clients. There are three testimonials displayed giving a picture, feedback and name.
+- The testimonials section provides the user with some feedback from past clients. There are three testimonials displayed, giving a picture, feedback, and name.
 
 ![](docs/testimonials.jpg)
 
 ##### Footer
 
-- Footer has a basic style, displays social media links and copyright information.
+- Footer has a basic style that displays social media links and copyright information.
 
 ![](docs/footer.jpg)
 
@@ -148,11 +148,11 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 
 #### Sign In page
 
-- The user can log in using his credentials, username, and password. There is a link to sign-up form in the case of a new user.
+- The user can log in using his credentials, username, and password. There is a link to the signup form in the case of a new user.
 
 ![](docs/login-page.jpg)
 
-- The CustomSign up form extends the Django classic form with some extra fields. The user is required to add an address, city housing type (chose from a dropdown list), and house surface in sqm. This information is relevant for calculating the exact price of a service.
+- The CustomSign up form extends the Django classic form with extra fields. The user is required to add an address, city housing type (chose from a dropdown list), and house surface in sqm. This information is relevant for calculating the exact price of a service.
 
 ![](docs/signup_form.jpg)
 
@@ -181,7 +181,7 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 
 ## Technologies used
 
-- Python - primary language of the application.
+- Python - the primary language of the application.
 - HTML5 - provides the content and structure for the website.
 - CSS - provides the styling.
 - Django - Django framework for the project.
@@ -221,9 +221,9 @@ Please refer to [here](Testing.md) for more information on testing.
 2. Scroll down to "Deployment Method" and select "GitHub".
 3. Authorise the connection of Heroku to GitHub.
 4. Search for your GitHub repository name, and select the correct repository.
-5. For Deployment there are two options, Automatic Deployments or Manual.
+5. For Deployment, there are two options, Automatic Deployments or Manual.
 6. Automatic Deployment: This will prompt Heroku to re-build your app each time you push your code to GitHub.
-7. Manual Deployment: This will only prompt Heroku to build your app when you manually tell it to do so.
+7. Manual Deployment: This will only prompt Heroku to build your app when you manually tell it.
 8. Select "master/Main", and the deployment method that you desire.
 
 ### Fork repository on GitHub
@@ -233,12 +233,12 @@ Please refer to [here](Testing.md) for more information on testing.
 
 ### Local clone of a project
 
-1. Under the repository’s name, click on the code tab.
+1. Under the repository's name, click on the code tab.
 2. In the Clone with HTTPS section, click on the clipboard icon to copy the given URL. Cloning image
 3. In your IDE of choice, open Git Bash.
 4. Change the current working directory to the location where you want the cloned directory to be made.
 5. Type git clone, and then paste the URL copied from GitHub.
-6. Press enter and the local clone will be created.
+6. Press 'enter', and the local clone will be created.
 
 ## Acknowledgements
 
