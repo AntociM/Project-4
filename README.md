@@ -111,7 +111,7 @@ The application has three main pages: Home, Services, and Contact. It also has s
 ##### Our Goal and About Us 
 - Structured in 2 separated elements, these sections help the user find more information about the company's history and the values and strives that are representative.
 
-![](docs/About us.jpg)
+![](docs/About-us.jpg)
 
 ##### Service Overview
 - A responsively styled services display to allow the user a quick overview. Each service has a representative icon next to it. 
@@ -149,8 +149,6 @@ The application has three main pages: Home, Services, and Contact. It also has s
 #### Sign In page
 
 - The user can log in using his credentials, username, and password. There is a link to the signup form in the case of a new user.
-
-![](docs/login-page.jpg)
 
 - The CustomSign up form extends the Django classic form with extra fields. The user is required to add an address, city housing type (chose from a dropdown list), and house surface in sqm. This information is relevant for calculating the exact price of a service.
 
