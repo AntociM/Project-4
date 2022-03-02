@@ -206,8 +206,39 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 [StackOverflow](https://stackoverflow.com/) for generals ideas.
 [This tutorial](https://www.youtube.com/watch?v=fdkgcZHA0Ew&ab_channel=VeryAcademy) on data selection in Django.
 [Ordinarycoders](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend) for contact form ideas.
-[Code with Mosh](https://codewithmosh.com/p/the-ultimate-django-part1) for more info om MVC.
+[Code with Mosh](https://codewithmosh.com/p/the-ultimate-django-part1) for more info om MVC.g
 
+## Deployment
+
+### App deployment
+
+1. Navigate to the "Deploy" section.
+2. Scroll down to "Deployment Method" and select "GitHub".
+3. Authorise the connection of Heroku to GitHub.
+4. Search for your GitHub repository name, and select the correct repository.
+5. For Deployment there are two options, Automatic Deployments or Manual.
+6. Automatic Deployment: This will prompt Heroku to re-build your app each time you push your code to GitHub.
+7. Manual Deployment: This will only prompt Heroku to build your app when you manually tell it to do so.
+8. Select "master/Main", and the deployment method that you desire.
+
+### Fork repository on GitHub
+
+1. Log in to GitHub and locate the repository.
+2. Click on the 'Fork' button (located on the left-hand side) to create a copy of the original repository in your GitHub Account.
+
+### Local clone of a project
+
+1. Under the repository’s name, click on the code tab.
+2. In the Clone with HTTPS section, click on the clipboard icon to copy the given URL. Cloning image
+3. In your IDE of choice, open Git Bash.
+4. Change the current working directory to the location where you want the cloned directory to be made.
+5. Type git clone, and then paste the URL copied from GitHub.
+6. Press enter and the local clone will be created.
+
+## Acknowledgements
+
+This project was completed as a 4th Project Portfolio for the Full Stack Software Developer (e-Commerce) Diploma at the Code Institute. Special thanks to my mentor Precious Ijege, for his support and feedback. 
+ 
 
 
 
