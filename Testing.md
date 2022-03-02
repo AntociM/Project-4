@@ -17,6 +17,13 @@ This tool was used to test the performance and accessibility, and it provided he
 
 This part of the testing process showed that the site was slow to load. All the images were compressed, changed the text color, added labels. This sped up the loading time and increased the performance rating.
 
+### Responsivness
+
+The responsive design tests were carried out manually with Google Chrome DevTools.
+
+### Compatibility
+
+The website was tested on Chrome, Edge, Mozilla Firefox. The functionality and appearance remain unchanged between these three on any device size.
 ### Manual Testig
 
 The testing targeted especially form fields input. 
@@ -27,7 +34,11 @@ The testing targeted especially form fields input.
 
 - User is not allowed to **cancel** his booking more than two days before the booked date, is not permitted to change service type once the booking is done, and is not allowed to edit an old booking (past current date).
 
-- The **surface_sqm* field from the SignUp Form is not allowing the user to add negative values. This is one of the bugs documented in GitHub issues. The solution was adding MinValueValidator, and this field validates values between 20 and 500 sqm.
+- The **surface_sqm** field from the SignUp Form is not allowing the user to add negative values. This is one of the bugs documented in GitHub issues. The solution was adding MinValueValidator, and this field validates values between 20 and 500 sqm.
+
+### Bugs 
+
+
 
 
 

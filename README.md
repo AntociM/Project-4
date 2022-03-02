@@ -197,17 +197,21 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 
 ## Credits
 
-[Shutterstoc](https://www.shutterstock.com/) for images.
-[Unsplash](https://unsplash.com/) for media content.
-[Coolors](https://coolors.co/palettes/trending) for genereting color scheme.
-[Iconfinder]( https://www.iconfinder.com) for the icons.
-[Theme fisher](https://themefisher.com/free-bootstrap-templates/) for inspiration on Bootstrap templates.
-[This](https://bbbootstrap.com/snippets/testimonial-box-round-images-63788768) for Testimonials.
-[Date picker](https://simpleisbetterthancomplex.com/tutorial/2019/01/03/how-to-use-date-picker-with-django.html) ideas.
-[StackOverflow](https://stackoverflow.com/) for generals ideas.
-[This tutorial](https://www.youtube.com/watch?v=fdkgcZHA0Ew&ab_channel=VeryAcademy) on data selection in Django.
-[Ordinarycoders](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend) for contact form ideas.
-[Code with Mosh](https://codewithmosh.com/p/the-ultimate-django-part1) for more info om MVC.g
+- [Shutterstoc](https://www.shutterstock.com/) for images.
+- [Unsplash](https://unsplash.com/) for media content.
+- [Coolors](https://coolors.co/palettes/trending) for genereting color scheme.
+- [Iconfinder]( https://www.iconfinder.com) for the icons.
+- [Theme fisher](https://themefisher.com/free-bootstrap-templates/) for inspiration on Bootstrap templates.
+- [This](https://bbbootstrap.com/snippets/testimonial-box-round-images-63788768) for Testimonials.
+- [Date picker](https://simpleisbetterthancomplex.com/tutorial/2019/01/03/how-to-use-date-picker-with-django.html) ideas.
+- [StackOverflow](https://stackoverflow.com/) for generals ideas.
+- [This tutorial](https://www.youtube.com/watch?v=fdkgcZHA0Ew&ab_channel=VeryAcademy) on data selection in Django.
+- [Ordinarycoders](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend) for contact form ideas.
+- [Code with Mosh](https://codewithmosh.com/p/the-ultimate-django-part1) for more info om MVC.
+
+## Testing 
+
+Please refer to [here](Testing.md) for more information on testing.
 
 ## Deployment
 
@@ -248,24 +252,3 @@ This project was completed as a 4th Project Portfolio for the Full Stack Softwar
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Credits: 
-- Icons provided by: https://www.iconfinder.com 
