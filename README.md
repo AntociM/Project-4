@@ -157,7 +157,7 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 
 #### Additional pages 
 
-- When the user is logged in, he can access his account using 'My Account' link from the navbar. Here the user can make a booking, see booking history and status, update or cancel one booking two days before the booked date. The user can as well update his registration information.  
+- When the user is logged in, he can access his account using 'My Account' link from the navbar. Here the user can make a booking, see booking history and status, update or cancel one booking two days before the booked date. The user can as well update his registration information.    
 
 ![](docs/user-profile.jpg)
 
@@ -170,6 +170,43 @@ The application has 3 main pages: Home, Services, and Contact. It also has sever
 ![](docs/admin-panel-bookings.jpg)
 
 ![](docs/admin-panel-users.jpg)
+
+
+### Future Feature
+
+- The main feature will be connecting to an email to confirm bookings and to receive email notifications with contact details.
+- Automatic booking system based on specific criteria. Currently, there is a manual validation of bookings done by the Admin.
+- The website would also benefit from an automatic payment system.
+
+## Technologies used
+
+- Python - primary language of the application.
+- HTML5 - provides the content and structure for the website.
+- CSS - provides the styling.
+- Django - Django framework for the project.
+- Heroku - For project deployment.
+- Bootstrap - Design toolkit.
+- GitHub - to host the repositories.
+- Gitpod - as the IDE for the application.
+- Balsamiq - used to create the wireframes.
+- Cloudinary - used for image storage.
+- PEP8 - for testing and validating the code.
+- W3C Validator - code validation.
+- DrawSQL - for the database diagram.
+
+## Credits
+
+[Shutterstoc](https://www.shutterstock.com/) for images.
+[Unsplash](https://unsplash.com/) for media content.
+[Coolors](https://coolors.co/palettes/trending) for genereting color scheme.
+[Iconfinder]( https://www.iconfinder.com) for the icons.
+[Theme fisher](https://themefisher.com/free-bootstrap-templates/) for inspiration on Bootstrap templates.
+[This](https://bbbootstrap.com/snippets/testimonial-box-round-images-63788768) for Testimonials.
+[Date picker](https://simpleisbetterthancomplex.com/tutorial/2019/01/03/how-to-use-date-picker-with-django.html) ideas.
+[StackOverflow](https://stackoverflow.com/) for generals ideas.
+[This tutorial](https://www.youtube.com/watch?v=fdkgcZHA0Ew&ab_channel=VeryAcademy) on data selection in Django.
+[Ordinarycoders](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend) for contact form ideas.
+[Code with Mosh](https://codewithmosh.com/p/the-ultimate-django-part1) for more info om MVC.
 
 
 
