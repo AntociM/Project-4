@@ -3,7 +3,7 @@ The Spotless Co. is a presentation website for a fictional professional cleaning
 
 ![Home page]( docs/home-page-print.jpg)
 
-The live site can be viewed [here](https://spotlessco.herokuapp.com/).
+The live site can be viewed [here](https://spotless-4i6o.onrender.com).
 
 ## User Stories
 
